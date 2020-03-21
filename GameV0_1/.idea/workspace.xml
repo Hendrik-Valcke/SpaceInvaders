@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="GameV0_1" targetName="GameV0_1" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3bc93a0d-1bb7-4928-b160-509cbef7255e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1YZtXB0gx6wOmqHHwkL59r536j8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Data\Clion\GameV0\Resources\SDL" />
+      <recent name="D:\Data\Clion\GameV0\Resources" />
+      <recent name="D:\Data\Clion\GameV0\cmake-build-debug\Sprites" />
+      <recent name="D:\Data\Clion\GameV0\cmake-build-debug" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GameV0_1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="GameV0_1" TARGET_NAME="GameV0_1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="GameV0_1" RUN_TARGET_NAME="GameV0_1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bc93a0d-1bb7-4928-b160-509cbef7255e" name="Default Changelist" comment="" />
+      <created>1583161980555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583161980555</updated>
+      <workItem from="1583161982131" duration="5933000" />
+      <workItem from="1583326224772" duration="9357000" />
+      <workItem from="1583747769850" duration="21870000" />
+      <workItem from="1584363394218" duration="7956000" />
+      <workItem from="1584556190076" duration="827000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="132" key="#com.intellij.ide.util.MemberChooser" timestamp="1583329388858">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="132" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583329388858" />
+    <state width="1493" height="96" key="GridCell.Tab.0.bottom" timestamp="1584438680251">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768159034" />
+    <state width="1493" height="96" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584368057852" />
+    <state width="1493" height="96" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584438680251" />
+    <state width="1493" height="96" key="GridCell.Tab.0.center" timestamp="1584438680251">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="275" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768159034" />
+    <state width="1493" height="96" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584368057852" />
+    <state width="1493" height="96" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584438680251" />
+    <state width="1493" height="96" key="GridCell.Tab.0.left" timestamp="1584438680251">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="275" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768159034" />
+    <state width="1493" height="96" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584368057852" />
+    <state width="1493" height="96" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584438680251" />
+    <state width="1493" height="96" key="GridCell.Tab.0.right" timestamp="1584438680251">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="275" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768159034" />
+    <state width="1493" height="96" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584368057852" />
+    <state width="1493" height="96" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584438680251" />
+    <state width="746" height="260" key="GridCell.Tab.1.bottom" timestamp="1583768574918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="346" key="GridCell.Tab.1.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768142424" />
+    <state width="746" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1583768574918" />
+    <state width="746" height="260" key="GridCell.Tab.1.center" timestamp="1583768574918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="346" key="GridCell.Tab.1.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768142423" />
+    <state width="746" height="260" key="GridCell.Tab.1.center/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1583768574918" />
+    <state width="746" height="260" key="GridCell.Tab.1.left" timestamp="1583768574918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="346" key="GridCell.Tab.1.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768142423" />
+    <state width="746" height="260" key="GridCell.Tab.1.left/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1583768574918" />
+    <state width="746" height="260" key="GridCell.Tab.1.right" timestamp="1583768574918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="938" height="346" key="GridCell.Tab.1.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583768142423" />
+    <state width="746" height="260" key="GridCell.Tab.1.right/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1583768574918" />
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1584556240276">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584556240276" />
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.-442.1920.1040@0.0.1536.824" timestamp="1584363409477" />
+    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583748206648" />
+    <state x="465" y="-940" width="1332" height="810" maximized="true" key="dock-window-1" timestamp="1584364637040">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="32" y="194" width="1518" height="715" maximized="true" key="dock-window-1/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583770982922" />
+    <state x="465" y="-940" width="1332" height="810" maximized="true" key="dock-window-1/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584364637040" />
+    <state x="541" y="-640" width="1332" height="686" maximized="true" key="dock-window-2" timestamp="1584368494944">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="424" y="-1080" width="964" height="960" key="dock-window-2/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583771551349" />
+    <state x="541" y="-640" width="1332" height="686" maximized="true" key="dock-window-2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584368494944" />
+    <state x="311" y="-731" width="1332" height="686" key="dock-window-3" timestamp="1584438677587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="114" y="-11" width="964" height="960" key="dock-window-3/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1583772676589" />
+    <state x="311" y="-731" width="1332" height="686" maximized="true" key="dock-window-3/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1584368810469" />
+    <state x="311" y="-731" width="1332" height="686" key="dock-window-3/0.0.1536.824@0.0.1536.824" timestamp="1584438677587" />
+  </component>
+</project>

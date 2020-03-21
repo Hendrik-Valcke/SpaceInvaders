@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Data/Clion/GameV0_1/Resources/Factory.h
+Window.h
+D:/Data/Clion/GameV0_1/Resources/Window.h
+InputHandler.h
+D:/Data/Clion/GameV0_1/Resources/InputHandler.h
+
+D:/Data/Clion/GameV0_1/Resources/Game.cpp
+iostream
+-
+Game.h
+D:/Data/Clion/GameV0_1/Resources/Game.h
+
+D:/Data/Clion/GameV0_1/Resources/Game.h
+Factory.h
+D:/Data/Clion/GameV0_1/Resources/Factory.h
+
+D:/Data/Clion/GameV0_1/Resources/InputHandler.h
+
+D:/Data/Clion/GameV0_1/Resources/Window.h
+string
+-
+
