@@ -6,9 +6,12 @@
 #define GAMEV0_INPUTHANDLER_H
 
 
+#include "Input.h"
+
 class InputHandler {
 public:
     virtual void handleInput()=0;
+    virtual Input getInput()=0;
 };
 
 

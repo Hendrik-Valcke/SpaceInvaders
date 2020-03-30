@@ -8,8 +8,24 @@
 
 class Input {
 public:
-    Input();
+    //Input();
     //~Input();
+    void clearInput();
+    void setUp(bool status){up=status;}
+    void setDown(bool status){down=status;}
+    void setLeft(bool status){left=status;}
+    void setRight(bool status){right=status;}
+    void setFire(bool status){fire=status;}
+    void setQuit(bool status){quit=status;}
+
+
+private:
+    bool left;
+    bool right;
+    bool up;
+    bool down;
+    bool fire;
+    bool quit;
 
 };
 

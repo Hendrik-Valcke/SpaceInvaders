@@ -14,8 +14,9 @@ public:
     SdlWindow();
     ~SdlWindow();
     bool makeWindow() override ;
+    bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr) override ;
     bool loadMedia() override ;
-    SDL_Texture* loadTexture( std::string path );
+    SDL_Texture* loadTexture( std::string path )  ;
     bool closeWindow() override;
     bool updateWindow() override;
     bool applyMedia() override;
@@ -38,6 +39,8 @@ public:
     void setTitle(std::string sTitle) override;
     std::string getPath() override;
     void setPath(std::string sPath) override;
+
+    SDL_Renderer* getRenderer(){return gRenderer;}
 
 
 private:

@@ -7,12 +7,17 @@
 
 
 #include "../InputHandler.h"
+#include "../Input.h"
 
 class SdlInputHandler : public InputHandler{
 public:
     //SdlInputHandler();
     //~SdlInputHandler();
     void handleInput() override ;
+    Input getInput() override { return input;}
+
+private:
+    Input input;
 };
 
 

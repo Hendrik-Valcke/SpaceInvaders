@@ -10,12 +10,14 @@
 
 class GameObject {
 public:
+    GameObject();
+    GameObject(int cXpos, int cYpos, int width, int height, Sprite* cSprite);
 private:
     int xpos;
     int ypos;
-    int maxHealth;
-    int health;
-    Sprite objectSprite;
+    int width;
+    int height;
+    Sprite* objectSprite;
 
 };
 

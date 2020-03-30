@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\ProgramFiles\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Program Files\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\ProgramFiles\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\Program Files\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Data\Clion\GameV0_1
+CMAKE_SOURCE_DIR = D:\Git\SpaceInvaders\GameV0_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Data\Clion\GameV0_1\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = D:\Data\Clion\GameV0_1\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\ProgramFiles\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\Program Files\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\ProgramFiles\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\Program Files\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Clion\GameV0_1\cmake-build-debug\CMakeFiles D:\Data\Clion\GameV0_1\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Clion\GameV0_1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,33 @@ Resources/Game.cpp.s:
 	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Game.cpp.s
 .PHONY : Resources/Game.cpp.s
 
+Resources/GameController.obj: Resources/GameController.cpp.obj
+
+.PHONY : Resources/GameController.obj
+
+# target to build an object file
+Resources/GameController.cpp.obj:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj
+.PHONY : Resources/GameController.cpp.obj
+
+Resources/GameController.i: Resources/GameController.cpp.i
+
+.PHONY : Resources/GameController.i
+
+# target to preprocess a source file
+Resources/GameController.cpp.i:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.i
+.PHONY : Resources/GameController.cpp.i
+
+Resources/GameController.s: Resources/GameController.cpp.s
+
+.PHONY : Resources/GameController.s
+
+# target to generate assembly for a file
+Resources/GameController.cpp.s:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.s
+.PHONY : Resources/GameController.cpp.s
+
 Resources/GameObject.obj: Resources/GameObject.cpp.obj
 
 .PHONY : Resources/GameObject.obj
@@ -175,6 +202,33 @@ Resources/GameObject.s: Resources/GameObject.cpp.s
 Resources/GameObject.cpp.s:
 	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.s
 .PHONY : Resources/GameObject.cpp.s
+
+Resources/Input.obj: Resources/Input.cpp.obj
+
+.PHONY : Resources/Input.obj
+
+# target to build an object file
+Resources/Input.cpp.obj:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Input.cpp.obj
+.PHONY : Resources/Input.cpp.obj
+
+Resources/Input.i: Resources/Input.cpp.i
+
+.PHONY : Resources/Input.i
+
+# target to preprocess a source file
+Resources/Input.cpp.i:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Input.cpp.i
+.PHONY : Resources/Input.cpp.i
+
+Resources/Input.s: Resources/Input.cpp.s
+
+.PHONY : Resources/Input.s
+
+# target to generate assembly for a file
+Resources/Input.cpp.s:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Input.cpp.s
+.PHONY : Resources/Input.cpp.s
 
 Resources/SDL/SdlFactory.obj: Resources/SDL/SdlFactory.cpp.obj
 
@@ -230,6 +284,33 @@ Resources/SDL/SdlInputHandler.cpp.s:
 	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlInputHandler.cpp.s
 .PHONY : Resources/SDL/SdlInputHandler.cpp.s
 
+Resources/SDL/SdlSprite.obj: Resources/SDL/SdlSprite.cpp.obj
+
+.PHONY : Resources/SDL/SdlSprite.obj
+
+# target to build an object file
+Resources/SDL/SdlSprite.cpp.obj:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj
+.PHONY : Resources/SDL/SdlSprite.cpp.obj
+
+Resources/SDL/SdlSprite.i: Resources/SDL/SdlSprite.cpp.i
+
+.PHONY : Resources/SDL/SdlSprite.i
+
+# target to preprocess a source file
+Resources/SDL/SdlSprite.cpp.i:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.i
+.PHONY : Resources/SDL/SdlSprite.cpp.i
+
+Resources/SDL/SdlSprite.s: Resources/SDL/SdlSprite.cpp.s
+
+.PHONY : Resources/SDL/SdlSprite.s
+
+# target to generate assembly for a file
+Resources/SDL/SdlSprite.cpp.s:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.s
+.PHONY : Resources/SDL/SdlSprite.cpp.s
+
 Resources/SDL/SdlWindow.obj: Resources/SDL/SdlWindow.cpp.obj
 
 .PHONY : Resources/SDL/SdlWindow.obj
@@ -256,33 +337,6 @@ Resources/SDL/SdlWindow.s: Resources/SDL/SdlWindow.cpp.s
 Resources/SDL/SdlWindow.cpp.s:
 	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.s
 .PHONY : Resources/SDL/SdlWindow.cpp.s
-
-Resources/Sprite.obj: Resources/Sprite.cpp.obj
-
-.PHONY : Resources/Sprite.obj
-
-# target to build an object file
-Resources/Sprite.cpp.obj:
-	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Sprite.cpp.obj
-.PHONY : Resources/Sprite.cpp.obj
-
-Resources/Sprite.i: Resources/Sprite.cpp.i
-
-.PHONY : Resources/Sprite.i
-
-# target to preprocess a source file
-Resources/Sprite.cpp.i:
-	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Sprite.cpp.i
-.PHONY : Resources/Sprite.cpp.i
-
-Resources/Sprite.s: Resources/Sprite.cpp.s
-
-.PHONY : Resources/Sprite.s
-
-# target to generate assembly for a file
-Resources/Sprite.cpp.s:
-	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Sprite.cpp.s
-.PHONY : Resources/Sprite.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -323,21 +377,27 @@ help:
 	@echo ... Resources/Game.obj
 	@echo ... Resources/Game.i
 	@echo ... Resources/Game.s
+	@echo ... Resources/GameController.obj
+	@echo ... Resources/GameController.i
+	@echo ... Resources/GameController.s
 	@echo ... Resources/GameObject.obj
 	@echo ... Resources/GameObject.i
 	@echo ... Resources/GameObject.s
+	@echo ... Resources/Input.obj
+	@echo ... Resources/Input.i
+	@echo ... Resources/Input.s
 	@echo ... Resources/SDL/SdlFactory.obj
 	@echo ... Resources/SDL/SdlFactory.i
 	@echo ... Resources/SDL/SdlFactory.s
 	@echo ... Resources/SDL/SdlInputHandler.obj
 	@echo ... Resources/SDL/SdlInputHandler.i
 	@echo ... Resources/SDL/SdlInputHandler.s
+	@echo ... Resources/SDL/SdlSprite.obj
+	@echo ... Resources/SDL/SdlSprite.i
+	@echo ... Resources/SDL/SdlSprite.s
 	@echo ... Resources/SDL/SdlWindow.obj
 	@echo ... Resources/SDL/SdlWindow.i
 	@echo ... Resources/SDL/SdlWindow.s
-	@echo ... Resources/Sprite.obj
-	@echo ... Resources/Sprite.i
-	@echo ... Resources/Sprite.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

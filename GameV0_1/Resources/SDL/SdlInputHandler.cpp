@@ -13,12 +13,14 @@
 void SdlInputHandler::handleInput()
 {
     SDL_Event e;
+    input.clearInput();
     while( SDL_PollEvent( &e ) != 0 )
     {
         //User requests quit
         if( e.type == SDL_QUIT )
         {
             std::cout << "input: quit";
+            input.setQuit(true);
         }
             //User presses a key
         else if( e.type == SDL_KEYDOWN )
@@ -28,21 +30,25 @@ void SdlInputHandler::handleInput()
             {
                 case SDLK_UP:
                     std::cout << "input: up";
+                    input.setUp(true);
                     //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_UP ];
                     break;
 
                 case SDLK_DOWN:
                     std::cout << "input: down";
+                    input.setDown(true);
                     //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_DOWN ];
                     break;
 
                 case SDLK_LEFT:
                     std::cout << "input: left";
+                    input.setLeft(true);
                     //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_LEFT ];
                     break;
 
                 case SDLK_RIGHT:
                     std::cout << "input:right";
+                    input.setRight(true);
                     //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_RIGHT ];
                     break;
 

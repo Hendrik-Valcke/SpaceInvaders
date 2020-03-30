@@ -4,6 +4,8 @@
 
 int main(int argc, const char* argv[]) {
     Game* myGame= new Game{new SdlFactory()};
-    myGame->runScreen();
+    //myGame->runScreen();
+    myGame->startGame();
+    printf("\nsucces!");
     return 0;
 }

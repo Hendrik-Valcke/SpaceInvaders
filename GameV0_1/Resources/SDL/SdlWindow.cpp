@@ -115,6 +115,19 @@ SDL_Texture* SdlWindow::loadTexture( std::string path )
 return newTexture;
 }
 
+bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)
+{
+    printf("\napplying texture...");
+    SDL_Rect destRect;
+    destRect.x = sprDestX;
+    destRect.y = sprDestY;
+    destRect.w = sprWidth;
+    destRect.h = sprHeight;
+    SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
+    return true; //nog condities adden
+}
+
+
 bool SdlWindow::applyMedia()
 {
     printf("\napplying media...");
@@ -135,6 +148,7 @@ bool SdlWindow::closeWindow()
     printf("\nclosing window...");
 
     SDL_DestroyWindow(gWindow);
+    return true; // nog condities adden
 }
 
 //surface versie

@@ -6,14 +6,22 @@
 #include "SdlFactory.h"
 #include "SdlWindow.h"
 #include "SdlInputHandler.h"
+#include "SdlSprite.h"
 
 Window* SdlFactory::createWindow() {
-    Window *screen = new SdlWindow;
-    return screen;
+    Window *window = new SdlWindow;
+    return window;
 }
 
 InputHandler* SdlFactory::createInputHandler()
 {
-    InputHandler* iHandler=new SdlInputHandler;
-    return iHandler;
+    InputHandler* handler=new SdlInputHandler;
+    return handler;
+}
+
+Sprite* SdlFactory::createSprite(std::string cPath)
+{
+    auto* sprite = new SdlSprite(cPath);
+    sprite->setTexture(cPath);
+    return sprite;
 }

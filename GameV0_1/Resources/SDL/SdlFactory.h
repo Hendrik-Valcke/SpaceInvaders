@@ -12,6 +12,7 @@
 class SdlFactory: public Factory{
     Window* createWindow() override;
     InputHandler* createInputHandler() override ;
+    Sprite* createSprite(std::string cPath) override ;
 };
 
 

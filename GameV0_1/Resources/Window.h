@@ -5,13 +5,16 @@
 #ifndef GAMEV0_WINDOW_H
 #define GAMEV0_WINDOW_H
 #include <string>
+#include "Sprite.h"
 
 class Window {
 public:
     virtual bool makeWindow() =0;
     virtual bool loadMedia() =0;
+    //virtual Sprite loadTexture(std::string path)=0;
     //virtual Window* loadSurface()=0;
     //virtual void stretchMedia()=0;
+    virtual bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)=0;
     virtual bool applyMedia()=0;
     virtual bool closeWindow()=0;
     virtual bool updateWindow()=0;
