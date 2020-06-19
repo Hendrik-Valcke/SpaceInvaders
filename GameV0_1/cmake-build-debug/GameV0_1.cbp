@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.cpp">
+			<Option target="GameV0_1"/>
+		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.h">
+			<Option target="GameV0_1"/>
+		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/EnemyHorde.cpp">
+			<Option target="GameV0_1"/>
+		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/EnemyHorde.h">
+			<Option target="GameV0_1"/>
+		</Unit>
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Factory.h">
 			<Option target="GameV0_1"/>
 		</Unit>

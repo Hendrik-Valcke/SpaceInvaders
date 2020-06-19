@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj"
+  "CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj"
   "CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj"
   "CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj"
   "CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj"

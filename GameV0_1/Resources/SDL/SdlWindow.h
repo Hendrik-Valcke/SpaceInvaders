@@ -15,6 +15,7 @@ public:
     ~SdlWindow();
     bool makeWindow() override ;
     bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr) override ;
+    bool renderGameObject(GameObject* object) override ;
     bool loadMedia() override ;
     SDL_Texture* loadTexture( std::string path )  ;
     bool closeWindow() override;

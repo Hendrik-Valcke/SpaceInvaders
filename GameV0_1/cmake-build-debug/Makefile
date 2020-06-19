@@ -122,6 +122,60 @@ GameV0_1/fast:
 	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/build
 .PHONY : GameV0_1/fast
 
+Resources/Alien.obj: Resources/Alien.cpp.obj
+
+.PHONY : Resources/Alien.obj
+
+# target to build an object file
+Resources/Alien.cpp.obj:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj
+.PHONY : Resources/Alien.cpp.obj
+
+Resources/Alien.i: Resources/Alien.cpp.i
+
+.PHONY : Resources/Alien.i
+
+# target to preprocess a source file
+Resources/Alien.cpp.i:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.i
+.PHONY : Resources/Alien.cpp.i
+
+Resources/Alien.s: Resources/Alien.cpp.s
+
+.PHONY : Resources/Alien.s
+
+# target to generate assembly for a file
+Resources/Alien.cpp.s:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.s
+.PHONY : Resources/Alien.cpp.s
+
+Resources/EnemyHorde.obj: Resources/EnemyHorde.cpp.obj
+
+.PHONY : Resources/EnemyHorde.obj
+
+# target to build an object file
+Resources/EnemyHorde.cpp.obj:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj
+.PHONY : Resources/EnemyHorde.cpp.obj
+
+Resources/EnemyHorde.i: Resources/EnemyHorde.cpp.i
+
+.PHONY : Resources/EnemyHorde.i
+
+# target to preprocess a source file
+Resources/EnemyHorde.cpp.i:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.i
+.PHONY : Resources/EnemyHorde.cpp.i
+
+Resources/EnemyHorde.s: Resources/EnemyHorde.cpp.s
+
+.PHONY : Resources/EnemyHorde.s
+
+# target to generate assembly for a file
+Resources/EnemyHorde.cpp.s:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.s
+.PHONY : Resources/EnemyHorde.cpp.s
+
 Resources/Game.obj: Resources/Game.cpp.obj
 
 .PHONY : Resources/Game.obj
@@ -374,6 +428,12 @@ help:
 	@echo ... GameV0_1
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Resources/Alien.obj
+	@echo ... Resources/Alien.i
+	@echo ... Resources/Alien.s
+	@echo ... Resources/EnemyHorde.obj
+	@echo ... Resources/EnemyHorde.i
+	@echo ... Resources/EnemyHorde.s
 	@echo ... Resources/Game.obj
 	@echo ... Resources/Game.i
 	@echo ... Resources/Game.s

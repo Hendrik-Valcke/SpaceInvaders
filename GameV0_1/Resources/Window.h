@@ -6,6 +6,7 @@
 #define GAMEV0_WINDOW_H
 #include <string>
 #include "Sprite.h"
+#include "GameObject.h"
 
 class Window {
 public:
@@ -15,6 +16,7 @@ public:
     //virtual Window* loadSurface()=0;
     //virtual void stretchMedia()=0;
     virtual bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)=0;
+    virtual bool renderGameObject ( GameObject* object)=0;
     virtual bool applyMedia()=0;
     virtual bool closeWindow()=0;
     virtual bool updateWindow()=0;

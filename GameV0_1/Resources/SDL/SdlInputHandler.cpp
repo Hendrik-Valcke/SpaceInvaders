@@ -5,10 +5,7 @@
 #include <SDL_events.h>
 #include <iostream>
 #include "SdlInputHandler.h"
-/*SdlInputHandler::SdlInputHandler()
-{
 
-}*/
 
 void SdlInputHandler::handleInput()
 {
@@ -19,44 +16,35 @@ void SdlInputHandler::handleInput()
         //User requests quit
         if( e.type == SDL_QUIT )
         {
-            std::cout << "input: quit";
             input.setQuit(true);
         }
             //User presses a key
-        else if( e.type == SDL_KEYDOWN )
+        const Uint8* currentKeyStates = SDL_GetKeyboardState( nullptr );
+        if( currentKeyStates[ SDL_SCANCODE_UP ] )
         {
-            //Select surfaces based on key press
-            switch( e.key.keysym.sym )
-            {
-                case SDLK_UP:
-                    std::cout << "input: up";
-                    input.setUp(true);
-                    //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_UP ];
-                    break;
-
-                case SDLK_DOWN:
-                    std::cout << "input: down";
-                    input.setDown(true);
-                    //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_DOWN ];
-                    break;
-
-                case SDLK_LEFT:
-                    std::cout << "input: left";
-                    input.setLeft(true);
-                    //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_LEFT ];
-                    break;
-
-                case SDLK_RIGHT:
-                    std::cout << "input:right";
-                    input.setRight(true);
-                    //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_RIGHT ];
-                    break;
-
-                default:
-                    std::cout << "input: default";
-                    //gCurrentSurface = gKeyPressSurfaces[ KEY_PRESS_SURFACE_DEFAULT ];
-                    break;
-            }
+            input.setUp(1);
         }
+        if( currentKeyStates[ SDL_SCANCODE_DOWN ] )
+        {
+            input.setDown(1);
+        }
+        if( currentKeyStates[ SDL_SCANCODE_LEFT ] )
+        {
+            input.setLeft(1);
+        }
+        if( currentKeyStates[ SDL_SCANCODE_RIGHT ] )
+        {
+            input.setRight(1);
+        }
+        if( currentKeyStates[ SDL_SCANCODE_ESCAPE ] )
+        {
+            input.setQuit(true);
+        }
+        if( currentKeyStates[ SDL_SCANCODE_SPACE ] )
+        {
+            input.setFire(true);
+        }
+
+
     }
 }

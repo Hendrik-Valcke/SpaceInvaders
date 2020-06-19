@@ -182,6 +182,34 @@ CMakeFiles/GameV0_1.dir/Resources/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GameV0_1.dir/Resources/Input.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\SpaceInvaders\GameV0_1\Resources\Input.cpp -o CMakeFiles\GameV0_1.dir\Resources\Input.cpp.s
 
+CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: CMakeFiles/GameV0_1.dir/flags.make
+CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: CMakeFiles/GameV0_1.dir/includes_CXX.rsp
+CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: ../Resources/Alien.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\GameV0_1.dir\Resources\Alien.cpp.obj -c D:\Git\SpaceInvaders\GameV0_1\Resources\Alien.cpp
+
+CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\SpaceInvaders\GameV0_1\Resources\Alien.cpp > CMakeFiles\GameV0_1.dir\Resources\Alien.cpp.i
+
+CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\SpaceInvaders\GameV0_1\Resources\Alien.cpp -o CMakeFiles\GameV0_1.dir\Resources\Alien.cpp.s
+
+CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: CMakeFiles/GameV0_1.dir/flags.make
+CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: CMakeFiles/GameV0_1.dir/includes_CXX.rsp
+CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/EnemyHorde.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\GameV0_1.dir\Resources\EnemyHorde.cpp.obj -c D:\Git\SpaceInvaders\GameV0_1\Resources\EnemyHorde.cpp
+
+CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Git\SpaceInvaders\GameV0_1\Resources\EnemyHorde.cpp > CMakeFiles\GameV0_1.dir\Resources\EnemyHorde.cpp.i
+
+CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Git\SpaceInvaders\GameV0_1\Resources\EnemyHorde.cpp -o CMakeFiles\GameV0_1.dir\Resources\EnemyHorde.cpp.s
+
 # Object files for target GameV0_1
 GameV0_1_OBJECTS = \
 "CMakeFiles/GameV0_1.dir/main.cpp.obj" \
@@ -192,7 +220,9 @@ GameV0_1_OBJECTS = \
 "CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj" \
 "CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj" \
 "CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj" \
-"CMakeFiles/GameV0_1.dir/Resources/Input.cpp.obj"
+"CMakeFiles/GameV0_1.dir/Resources/Input.cpp.obj" \
+"CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj" \
+"CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj"
 
 # External object files for target GameV0_1
 GameV0_1_EXTERNAL_OBJECTS =
@@ -206,12 +236,14 @@ GameV0_1.exe: CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/Resources/Input.cpp.obj
+GameV0_1.exe: CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj
+GameV0_1.exe: CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/build.make
 GameV0_1.exe: C:/MinGW/lib/libSDL2.dll.a
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/linklibs.rsp
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/objects1.rsp
 GameV0_1.exe: CMakeFiles/GameV0_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable GameV0_1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Git\SpaceInvaders\GameV0_1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable GameV0_1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\GameV0_1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

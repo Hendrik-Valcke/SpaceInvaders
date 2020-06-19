@@ -17,6 +17,7 @@ private:
     Factory *factory;
     bool isRunning;
 
+
 };
 
 

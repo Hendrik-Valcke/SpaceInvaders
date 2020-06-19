@@ -3,9 +3,11 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "Game.h"
 #include "GameObject.h"
 #include "GameController.h"
+#include "Alien.h"
 
 Game::Game(Factory *cFactory)
 {
@@ -17,73 +19,96 @@ void Game::setFactory(Factory* sFactory)
 }
 void Game::runScreen()
 {
-    Window *screen = factory->createWindow();
-    InputHandler *iHandler=factory->createInputHandler();
 
-    if( !screen->makeWindow() )
-    {
-        printf( "Failed to initialize!\n" );
-    }
-    else
-    {
-        //Load media
-        if( !screen->loadMedia() )
-        {
-            printf( "Failed to load media!\n" );
-        }
-        else
-        {
-            iHandler->handleInput();
-
-            screen->applyMedia();
-            screen->updateWindow();
-            _sleep(5000);
-
-        }
-    }
-
-    //Free resources and close SDL
-    screen->closeWindow();
 }
 
 void Game::startGame()
 {
+    //create window
     Window* screen = factory->createWindow();
     GameController::getInstance().setWindow(screen);
+    //set up inputHandler
     InputHandler* iHandler=factory->createInputHandler();
+    Input input;
     if(!screen->makeWindow())
     {
         isRunning= false;
         printf("\nWindow could not be created");
-    }
-    Sprite* background =factory->createSprite("Sprites/background.png");
-    Sprite* playerSprite =factory->createSprite("Sprites/playerShip.png");
-    Sprite* alienSprite =factory->createSprite("Sprites/alien.png");
-    GameObject *alien = new GameObject(620,420,50,50,alienSprite);
-    GameObject *player = new GameObject(620,420,100,100,playerSprite);
-    /*while(isRunning)
+    }else
     {
+        printf("\nWindow succesfully created");
+    }
+    //load sprites
+    Sprite* background =factory->createSprite("Sprites/spaceTheme/background.png");
+    Sprite* playerSprite =factory->createSprite("Sprites/spaceTheme/playerShip.png");
+    Sprite* alienSprite =factory->createSprite("Sprites/spaceTheme/alien.png");
+    Sprite* alien2Sprite =factory->createSprite("Sprites/spaceTheme/alien2.png");
+    Sprite* bulletSprite =factory->createSprite("Sprites/spaceTheme/bullet.png");
+    Sprite* enemyBulletSprite =factory->createSprite("Sprites/spaceTheme/enemyBullet.png");
+    //make enemies
+    std::vector < Alien* >
+            alienVector(6);
+    int teller = 0;
+    for (Alien* x: alienVector)
+    {
+        //x= new Alien( 220 + teller*64, 120, 64, 64, 10, alienSprite);
+        alienVector[teller]= new Alien( 64 + teller*80, 64, 64, 64, 10, alienSprite);
+        teller++;
+    }
+    teller = 0;
+
+    std::vector < Alien* >
+            alienVector2(6);
+    for (Alien* x: alienVector2)
+    {
+        //x= new Alien( 220 + teller*64, 120, 64, 64, 10, alienSprite);
+        alienVector2[teller]= new Alien( 64 + teller*80, 128, 64, 64, 10, alien2Sprite);
+        teller++;
+    }
+    teller = 0;
+    //Alien *alien = new Alien(0, 0, 0, 0, 0, nullptr, 220, 120, 64, 64, 10, alienSprite);
+    GameObject *player = new GameObject(520,400,64,64,20,playerSprite);
+    player->setHealth(3);
+
+
+    while(isRunning)
+    {
+        //input + moven
+        input.clearInput();
         iHandler->handleInput();
-        Input input = iHandler->getInput();
-        if input.g
-        //input
+        input = iHandler->getInput();
+        if((player->getXpos()+ (-input.getLeft()+input.getRight())*player->getSpeed()>0) && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() <screen->getWidth()  ))
+        {
+            player->setXpos(player->getXpos() +(-input.getLeft()+input.getRight()) * player->getSpeed());
+        } else
+        {
+            player->setXpos(player->getXpos()+(-input.getLeft()+input.getRight())*__min(player->getXpos()-1,screen->getWidth()-(player->getXpos()+player->getWidth())));
+        }
+
+        if (input.isQuit())
+        {
+            isRunning = false;
+        }
+
+
         //logica
         //render
-    }
-*/
-    screen->applyTexture(0,0,640,480,background );
-    screen->applyTexture(120,360,64,64,alienSprite );
-    screen->applyTexture(320,360,128,128,playerSprite);
-    screen->updateWindow();
-    _sleep(1000);
-    for (int i = 0; i < 150; ++i) {
-        screen->applyTexture(0,0,640,480,background );
-        screen->applyTexture(120,360,64,64,alienSprite );
-        screen->applyTexture(320+i,360 ,100,100,playerSprite);
+        screen->applyTexture(0,0,1024,768,background );
+        screen->renderGameObject(player);
+        for (Alien* x: alienVector)
+        {
+            screen->renderGameObject(x);
+        }
+        for (Alien* x: alienVector2)
+        {
+            screen->renderGameObject(x);
+        }
+        //screen->renderGameObject(alien);
         screen->updateWindow();
-
-        _sleep(50);
     }
+    //stop de game
+
+
     screen->closeWindow();
 
 }

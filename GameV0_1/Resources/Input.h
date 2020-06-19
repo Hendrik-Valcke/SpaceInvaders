@@ -11,19 +11,38 @@ public:
     //Input();
     //~Input();
     void clearInput();
-    void setUp(bool status){up=status;}
-    void setDown(bool status){down=status;}
-    void setLeft(bool status){left=status;}
-    void setRight(bool status){right=status;}
-    void setFire(bool status){fire=status;}
-    void setQuit(bool status){quit=status;}
+    void returnInput();
+
+    int getLeft() const;
+
+    void setLeft(int left);
+
+    int getRight() const;
+
+    void setRight(int right);
+
+    int getUp() const;
+
+    void setUp(int up);
+
+    int getDown() const;
+
+    void setDown(int down);
+
+    bool isFire() const;
+
+    void setFire(bool fire);
+
+    bool isQuit() const;
+
+    void setQuit(bool quit);
 
 
 private:
-    bool left;
-    bool right;
-    bool up;
-    bool down;
+    int left;
+    int  right;
+    int up;
+    int down;
     bool fire;
     bool quit;
 

@@ -3,14 +3,15 @@
 //
 
 #include "SdlWindow.h"
+#include "../GameObject.h"
 #include <SDL.h>
 #include <stdio.h>
 #include <iostream>
 
 SdlWindow::SdlWindow()
 {
-    width=640;
-    height=480;
+    width=1024;
+    height=768;
     title = "please work :)";
     path = "Sprites/background.png";
 }
@@ -36,7 +37,7 @@ bool SdlWindow::makeWindow()
         }
 
         //Create window
-        gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN );
+        gWindow = SDL_CreateWindow( title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, false );
         if( gWindow == NULL )
         {
             printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
@@ -86,6 +87,7 @@ bool SdlWindow::loadMedia()
 
     return success;
 }
+//wordt niet meer gebruikt
 
 SDL_Texture* SdlWindow::loadTexture( std::string path )
 {
@@ -117,7 +119,7 @@ return newTexture;
 
 bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)
 {
-    printf("\napplying texture...");
+    //printf("\napplying texture...");
     SDL_Rect destRect;
     destRect.x = sprDestX;
     destRect.y = sprDestY;
@@ -127,17 +129,51 @@ bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprH
     return true; //nog condities adden
 }
 
+bool SdlWindow:: renderGameObject(GameObject* object)
+{
+    //fps->60 ->frameDuration = 60/1000 ms
+    uint32_t startTicks = SDL_GetTicks();//millisec
+    uint32_t frameDuration = 120/1000;
+    int catchupTime;
+
+    SDL_Rect destRect;
+    destRect.x = object->getXpos();
+    destRect.y = object->getYpos();
+    destRect.w = object->getWidth();
+    destRect.h = object->getHeight();
+    Sprite* spr = object->getObjectSprite();
+    SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
+
+    uint32_t timePassed = SDL_GetTicks()-startTicks;
+    if (timePassed+catchupTime <= frameDuration)
+    {
+        SDL_Delay(frameDuration-timePassed-catchupTime);
+        catchupTime = 0;
+    }
+    else //timePassed > frameDuration
+        {
+            catchupTime = (timePassed-catchupTime-frameDuration);
+            if (catchupTime<0)
+            {
+                catchupTime = 0;
+            }
+        }
+
+
+    return true; //nog condities adden
+}
+
 
 bool SdlWindow::applyMedia()
 {
-    printf("\napplying media...");
+    //printf("\napplying media...");
 
     SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
     return true;
 }
 bool SdlWindow:: updateWindow()
 {
-    printf("\nupdating window...");
+    //printf("\nupdating window...");
 
     SDL_RenderPresent( gRenderer );
     return true;
@@ -145,150 +181,12 @@ bool SdlWindow:: updateWindow()
 }
 bool SdlWindow::closeWindow()
 {
-    printf("\nclosing window...");
+    //printf("\nclosing window...");
 
     SDL_DestroyWindow(gWindow);
     return true; // nog condities adden
 }
 
-//surface versie
-/*bool SdlWindow::makeWindow()
-{
-    bool success = true;
-
-    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )//Initialize SDL
-    {
-        printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-        success=false;
-    }
-    else {//Create window
-        gWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
-        if (gWindow == NULL) {
-            printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-            success = false;
-        } else {//Get window surface
-            //screenSurface = SDL_GetWindowSurface(window);
-            //Initialize PNG loading
-            int imgFlags = IMG_INIT_PNG;
-            if( !( IMG_Init( imgFlags ) & imgFlags ) )
-            {
-                printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
-                success = false;
-            }
-            else
-            {
-                //Get window surface
-                gScreenSurface = SDL_GetWindowSurface( gWindow );
-            }//end png section
-        }
-    }
-    printf( "makewindow:1\n" );
-    return success;
-}
-
-SDL_Surface* SdlWindow::loadSurface( std::string path )//load surface with string: path
-{
-    SDL_Surface *optimizedSurface = NULL;//The final optimized image
-
-    SDL_Surface *loadedSurface = SDL_LoadBMP(path.c_str()); //Load image at specified path
-    if (loadedSurface == NULL) {
-        printf("Unable to load image %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
-    }
-    else
-    {
-        optimizedSurface = SDL_ConvertSurface( loadedSurface, screenSurface->format, 0 ); //Convert surface to screen format
-        if( optimizedSurface == NULL )
-        {
-            printf( "Unable to optimize image %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
-        }
-
-        SDL_FreeSurface( loadedSurface ); //Get rid of old loaded surface
-    }
-    printf( "loadsurface:1\n" );
-
-    return optimizedSurface;
-}
-
-SDL_Surface* SdlWindow::loadPng( std::string path )//load surface with string: path
-{
-    SDL_Surface *optimizedSurface = NULL;//The final optimized image
-
-    SDL_Surface *loadedSurface = IMG_Load(path.c_str()); //Load image at specified path
-    if (loadedSurface == NULL) {
-        printf("Unable to load image %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
-    }
-    else
-    {
-        optimizedSurface = SDL_ConvertSurface( loadedSurface, screenSurface->format, 0 ); //Convert surface to screen format
-        if( optimizedSurface == NULL )
-        {
-            printf( "Unable to optimize image %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
-        }
-
-        SDL_FreeSurface( loadedSurface ); //Get rid of old loaded surface
-    }
-    printf( "loadsurface:1\n" );
-
-    return optimizedSurface;
-}
-
-bool SdlWindow::loadMedia()
-{
-    bool success = true;
-    //Load stretching surface
-    //image = loadSurface( path.c_str() );
-    image = loadPng(path.c_str());
-    if( image == NULL )
-    {
-        printf( "Failed to load stretching image!\n" );
-        success = false;
-    }
-    printf( "loadmedia:1\n" );
-
-    return success;
-}
-void SdlWindow::stretchMedia()
-{
-    //Apply the image stretched
-    SDL_Rect stretchRect;
-    stretchRect.x = 0;
-    stretchRect.y = 0;
-    stretchRect.w = width;
-    stretchRect.h = height;
-    SDL_BlitScaled( image, NULL, screenSurface, &stretchRect );
-
-    printf( "stretchmedia:1\n" );
-    std::cout << "height:"  << height    ;
-
-}
-
-
-bool SdlWindow::closeWindow() {
-    //Deallocate surface
-    SDL_FreeSurface( image );
-    image = NULL;
-    //Destroy window
-    SDL_DestroyWindow( window );
-    window = NULL;
-    printf( "closewindow:1\n" );
-
-    return true;//later nog condities toevoegen
-}
-
-bool SdlWindow::updateWindow() {
-    //Update the surface
-    SDL_UpdateWindowSurface( window );
-    printf( "updatewindow:1\n" );
-
-    return true;//later nog condities toevoegen
-}
-bool SdlWindow::applyMedia() {
-    //Apply the image
-    SDL_BlitSurface( image, NULL, screenSurface, NULL );
-    printf( "applymedia:1\n" );
-
-    return true;//later nog condities toevoegen
-}*/
 
 int SdlWindow::getHeight() {
     return height;
