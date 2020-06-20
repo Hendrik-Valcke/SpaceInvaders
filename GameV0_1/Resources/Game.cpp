@@ -77,6 +77,7 @@ void Game::startGame()
         if(input.isFire())
         {
             //make player bullet...
+
         }
         input.clearInput();
 
