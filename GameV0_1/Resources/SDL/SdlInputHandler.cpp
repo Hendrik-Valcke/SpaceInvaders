@@ -2,7 +2,7 @@
 // Created by hendr on 09/03/2020.
 //
 
-#include <SDL_events.h>
+#include <SDL2/SDL_events.h>
 #include <iostream>
 #include "SdlInputHandler.h"
 

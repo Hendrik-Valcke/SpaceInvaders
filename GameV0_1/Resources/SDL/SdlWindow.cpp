@@ -6,6 +6,7 @@
 #include "../GameObject.h"
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL2/SDL_ttf.h>
 #include <iostream>
 
 SdlWindow::SdlWindow()
@@ -190,10 +191,10 @@ bool SdlWindow::closeWindow()
     gRenderer = NULL;
 
     //Quit SDL subsystems
-    //TTF_Quit();
+
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
-
     return true; // nog condities adden
 }
 

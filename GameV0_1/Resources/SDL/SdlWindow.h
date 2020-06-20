@@ -5,9 +5,10 @@
 #ifndef GAMEV0_SDLWINDOW_H
 #define GAMEV0_SDLWINDOW_H
 
-#include <SDL_video.h>
-#include <SDL_image.h>
+#include <SDL2/SDL_video.h>
+#include <SDL2/SDL_image.h>
 #include "../Window.h"
+#include <SDL2/SDL_ttf.h>
 
 class SdlWindow: public Window{
 public:
@@ -54,7 +55,6 @@ private:
     SDL_Window* gWindow = nullptr; //The window we'll be rendering to
     SDL_Renderer* gRenderer=nullptr;//the window renderer
     SDL_Texture* gTexture=nullptr;
-
     /*
     SDL_Surface* screenSurface = nullptr;//The surface contained by the window
     SDL_Surface* stretchedSurface = nullptr;
