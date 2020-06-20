@@ -13,7 +13,9 @@
 class SdlWindow: public Window{
 public:
     SdlWindow();
-    ~SdlWindow();
+    //~SdlWindow();
+    uint32_t sendTicks() override ;
+    void delayFrame(uint32_t time) override ;
     bool makeWindow() override ;
     bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr) override ;
     bool renderGameObject(GameObject* object) override ;

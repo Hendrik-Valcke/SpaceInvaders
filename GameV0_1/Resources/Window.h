@@ -10,11 +10,12 @@
 
 class Window {
 public:
+    virtual uint32_t sendTicks()=0;
+    virtual void delayFrame(uint32_t time)=0;
+
     virtual bool makeWindow() =0;
     virtual bool loadMedia() =0;
-    //virtual Sprite loadTexture(std::string path)=0;
-    //virtual Window* loadSurface()=0;
-    //virtual void stretchMedia()=0;
+
     virtual bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)=0;
     virtual bool renderGameObject ( GameObject* object)=0;
     virtual bool applyMedia()=0;
@@ -29,6 +30,7 @@ public:
     virtual void setTitle(std::string sTitle)=0;
     virtual std::string getPath()=0;
     virtual void setPath(std::string sPath)=0;
+
 private:
     int height;
     int width;

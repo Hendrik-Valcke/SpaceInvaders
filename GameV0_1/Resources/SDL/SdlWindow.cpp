@@ -16,6 +16,15 @@ SdlWindow::SdlWindow()
     title = "Space Invaders";
     path = "Sprites/background.png";
 }
+uint32_t SdlWindow::sendTicks()
+{
+    return SDL_GetTicks();
+}
+
+void SdlWindow::delayFrame(uint32_t time)
+{
+    SDL_Delay(time);
+}
 
 bool SdlWindow::makeWindow()
 {
@@ -133,9 +142,9 @@ bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprH
 bool SdlWindow:: renderGameObject(GameObject* object)
 {
     //fps->60 ->frameDuration = 60/1000 ms
-    uint32_t startTicks = SDL_GetTicks();//millisec
-    uint32_t frameDuration = FRAMES_PER_SEC/1000;
-    int catchupTime;
+    //uint32_t startTicks = SDL_GetTicks();//millisec
+    //uint32_t frameDuration = FRAMES_PER_SEC/1000;
+    //int catchupTime;
 
     SDL_Rect destRect;
     destRect.x = object->getXpos();
@@ -145,7 +154,7 @@ bool SdlWindow:: renderGameObject(GameObject* object)
     Sprite* spr = object->getObjectSprite();
     SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
 
-    uint32_t timePassed = SDL_GetTicks()-startTicks;
+    /*uint32_t timePassed = SDL_GetTicks()-startTicks;
     if (timePassed+catchupTime <= frameDuration)
     {
         SDL_Delay(frameDuration-timePassed-catchupTime);
@@ -158,13 +167,11 @@ bool SdlWindow:: renderGameObject(GameObject* object)
             {
                 catchupTime = 0;
             }
-        }
+        }*/
 
 
     return true; //nog condities adden
 }
-
-
 bool SdlWindow::applyMedia()
 {
     //printf("\napplying media...");
@@ -198,8 +205,6 @@ bool SdlWindow::closeWindow()
     SDL_Quit();
     return true; // nog condities adden
 }
-
-
 int SdlWindow::getHeight() {
     return height;
 }

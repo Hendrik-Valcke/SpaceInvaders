@@ -52,11 +52,13 @@ void Game::startGame()
     GameObject *player = new GameObject(SCREEN_W/2,SCREEN_H -3*PLAYER_H ,PLAYER_W,PLAYER_H,PLAYER_SPEED,playerSprite);
     player->setHealth(3);
 
-    int framecounter =0;
+    int frameCounter=0;
+    uint32_t catchupTime;
 
     //setup is done, start gameloop
     while(isRunning)
     {
+        uint32_t framestart = screen->sendTicks();
         //input + playermovement+shooting
         iHandler->handleInput();
         input = iHandler->getInput();
@@ -80,8 +82,8 @@ void Game::startGame()
 
         //logica
             //move enemies/bonus' every 10 frames
-            framecounter++;
-            if (framecounter % 20 == 0)
+            frameCounter++;
+            if (frameCounter % 20 == 0)
             {
                 enemies->moveHorde();
             }
@@ -104,17 +106,20 @@ void Game::startGame()
         }
             //bullets
             //bonus
-            /*
-            for (Alien* x: alienVector)
+        uint32_t timePassed = screen->sendTicks()-framestart;
+        if (timePassed < FRAMES_PER_SEC/1000)
+        {
+            screen->delayFrame(FRAMES_PER_SEC/1000-timePassed-catchupTime);
+            catchupTime = 0;
+        }
+        else //timePassed > frameDuration
+        {
+            catchupTime = (timePassed-catchupTime-FRAMES_PER_SEC/1000);
+            if (catchupTime<0)
             {
-                screen->renderGameObject(x);
+                catchupTime = 0;
             }
-            for (Alien* x: alienVector2)
-            {
-                screen->renderGameObject(x);
-            }
-            */
-            //screen->renderGameObject(alien);
+        }
         screen->updateWindow();
     }//repeat while game IsRunning
 
