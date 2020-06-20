@@ -10,9 +10,9 @@
 
 SdlWindow::SdlWindow()
 {
-    width=1024;
-    height=768;
-    title = "please work :)";
+    width=SCREEN_W;
+    height=SCREEN_H;
+    title = "Space Invaders";
     path = "Sprites/background.png";
 }
 
@@ -133,7 +133,7 @@ bool SdlWindow:: renderGameObject(GameObject* object)
 {
     //fps->60 ->frameDuration = 60/1000 ms
     uint32_t startTicks = SDL_GetTicks();//millisec
-    uint32_t frameDuration = 120/1000;
+    uint32_t frameDuration = FRAMES_PER_SEC/1000;
     int catchupTime;
 
     SDL_Rect destRect;
@@ -183,7 +183,17 @@ bool SdlWindow::closeWindow()
 {
     //printf("\nclosing window...");
 
-    SDL_DestroyWindow(gWindow);
+    //Destroy window
+    SDL_DestroyRenderer( gRenderer );
+    SDL_DestroyWindow( gWindow );
+    gWindow = NULL;
+    gRenderer = NULL;
+
+    //Quit SDL subsystems
+    //TTF_Quit();
+    IMG_Quit();
+    SDL_Quit();
+
     return true; // nog condities adden
 }
 

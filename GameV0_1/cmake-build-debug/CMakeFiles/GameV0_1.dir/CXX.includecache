@@ -632,9 +632,13 @@ C:/MinGW/include/SDL2/begin_code.h
 
 C:/MinGW/include/SDL2/close_code.h
 
+D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
+
 D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
 Sprite.h
 D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
+Constants.h
+D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
 
 D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlWindow.cpp
 SdlWindow.h

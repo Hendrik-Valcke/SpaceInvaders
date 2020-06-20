@@ -8,107 +8,117 @@
 #include "GameObject.h"
 #include "GameController.h"
 #include "Alien.h"
+#include "EnemyHorde.h"
 
 Game::Game(Factory *cFactory)
 {
     factory =cFactory;
-}
-void Game::setFactory(Factory* sFactory)
-{
-    factory = sFactory;
-}
-void Game::runScreen()
-{
-
 }
 
 void Game::startGame()
 {
     //create window
     Window* screen = factory->createWindow();
-    GameController::getInstance().setWindow(screen);
-    //set up inputHandler
-    InputHandler* iHandler=factory->createInputHandler();
-    Input input;
     if(!screen->makeWindow())
     {
         isRunning= false;
         printf("\nWindow could not be created");
-    }else
+    }
+    else
     {
         printf("\nWindow succesfully created");
+        isRunning = true;
     }
+    GameController::getInstance().setWindow(screen);
+
+    //set up inputHandler
+    InputHandler* iHandler=factory->createInputHandler();
+    Input input;
+
     //load sprites
     Sprite* background =factory->createSprite("Sprites/spaceTheme/background.png");
     Sprite* playerSprite =factory->createSprite("Sprites/spaceTheme/playerShip.png");
     Sprite* alienSprite =factory->createSprite("Sprites/spaceTheme/alien.png");
     Sprite* alien2Sprite =factory->createSprite("Sprites/spaceTheme/alien2.png");
+    Sprite* alien3Sprite =factory->createSprite("Sprites/spaceTheme/alien3.png");
     Sprite* bulletSprite =factory->createSprite("Sprites/spaceTheme/bullet.png");
     Sprite* enemyBulletSprite =factory->createSprite("Sprites/spaceTheme/enemyBullet.png");
-    //make enemies
-    std::vector < Alien* >
-            alienVector(6);
-    int teller = 0;
-    for (Alien* x: alienVector)
-    {
-        //x= new Alien( 220 + teller*64, 120, 64, 64, 10, alienSprite);
-        alienVector[teller]= new Alien( 64 + teller*80, 64, 64, 64, 10, alienSprite);
-        teller++;
-    }
-    teller = 0;
+    Sprite* bonusSprite =factory->createSprite("Sprites/spaceTheme/bonusGreen.png");
 
-    std::vector < Alien* >
-            alienVector2(6);
-    for (Alien* x: alienVector2)
-    {
-        //x= new Alien( 220 + teller*64, 120, 64, 64, 10, alienSprite);
-        alienVector2[teller]= new Alien( 64 + teller*80, 128, 64, 64, 10, alien2Sprite);
-        teller++;
-    }
-    teller = 0;
-    //Alien *alien = new Alien(0, 0, 0, 0, 0, nullptr, 220, 120, 64, 64, 10, alienSprite);
-    GameObject *player = new GameObject(520,400,64,64,20,playerSprite);
+    //make enemies
+    EnemyHorde* enemies= new EnemyHorde(alien3Sprite,alien2Sprite, alienSprite);
+
+    //make player
+    GameObject *player = new GameObject(SCREEN_W/2,SCREEN_H -3*PLAYER_H ,PLAYER_W,PLAYER_H,PLAYER_SPEED,playerSprite);
     player->setHealth(3);
 
+    int framecounter =0;
 
+    //setup is done, start gameloop
     while(isRunning)
     {
-        //input + moven
-        input.clearInput();
+        //input + playermovement+shooting
         iHandler->handleInput();
         input = iHandler->getInput();
-        if((player->getXpos()+ (-input.getLeft()+input.getRight())*player->getSpeed()>0) && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() <screen->getWidth()  ))
+        if((player->getXpos()+ (-input.getLeft()+input.getRight())*player->getSpeed()>0) && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() < screen->getWidth()))
         {
             player->setXpos(player->getXpos() +(-input.getLeft()+input.getRight()) * player->getSpeed());
-        } else
+        }
+        else
         {
             player->setXpos(player->getXpos()+(-input.getLeft()+input.getRight())*__min(player->getXpos()-1,screen->getWidth()-(player->getXpos()+player->getWidth())));
         }
-
         if (input.isQuit())
         {
             isRunning = false;
         }
-
+        if(input.isFire())
+        {
+            //make player bullet...
+        }
+        input.clearInput();
 
         //logica
+            //move enemies/bonus' every 10 frames
+            framecounter++;
+            if (framecounter % 20 == 0)
+            {
+                enemies->moveHorde();
+            }
+
+            //check all bullets for collisions or borders
+                //collision? kill objects & adjust score/health/...
+            //random chance enemy shoots back
+            //create enemy bullet...
+            //random chance bonus spawns
         //render
-        screen->applyTexture(0,0,1024,768,background );
-        screen->renderGameObject(player);
-        for (Alien* x: alienVector)
+        screen->applyTexture(0,0,SCREEN_W,SCREEN_H,background );//background
+        screen->renderGameObject(player);//player
+            //enemies
+        for (int i = 1; i <= 3; ++i)
         {
-            screen->renderGameObject(x);
+            for (Alien* x: enemies->getRow(i))
+            {
+                screen->renderGameObject(x);
+            }
         }
-        for (Alien* x: alienVector2)
-        {
-            screen->renderGameObject(x);
-        }
-        //screen->renderGameObject(alien);
+            //bullets
+            //bonus
+            /*
+            for (Alien* x: alienVector)
+            {
+                screen->renderGameObject(x);
+            }
+            for (Alien* x: alienVector2)
+            {
+                screen->renderGameObject(x);
+            }
+            */
+            //screen->renderGameObject(alien);
         screen->updateWindow();
-    }
-    //stop de game
+    }//repeat while game IsRunning
 
-
-    screen->closeWindow();
+    //stop the game
+    screen->closeWindow();//close everything and free memory
 
 }

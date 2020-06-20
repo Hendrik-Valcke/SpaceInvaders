@@ -4,16 +4,20 @@
 CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj
  D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.cpp
  D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
 CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj
  D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/EnemyHorde.cpp
  D:/Git/SpaceInvaders/GameV0_1/Resources/EnemyHorde.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj
  D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/EnemyHorde.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Factory.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Game.cpp
  D:/Git/SpaceInvaders/GameV0_1/Resources/Game.h
@@ -24,12 +28,14 @@ CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj
  D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Window.h
 CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameController.cpp
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameController.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Window.h
 CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.cpp
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
@@ -84,6 +90,7 @@ CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj
  C:/MinGW/include/SDL2/SDL_video.h
  C:/MinGW/include/SDL2/begin_code.h
  C:/MinGW/include/SDL2/close_code.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Factory.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Input.h
@@ -171,6 +178,7 @@ CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj
  C:/MinGW/include/SDL2/SDL_video.h
  C:/MinGW/include/SDL2/begin_code.h
  C:/MinGW/include/SDL2/close_code.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameController.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlSprite.cpp
@@ -226,12 +234,14 @@ CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj
  C:/MinGW/include/SDL2/SDL_video.h
  C:/MinGW/include/SDL2/begin_code.h
  C:/MinGW/include/SDL2/close_code.h
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlWindow.cpp
  D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlWindow.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Window.h
 CMakeFiles/GameV0_1.dir/main.cpp.obj
+ D:/Git/SpaceInvaders/GameV0_1/Resources/Constants.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Factory.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/Game.h
  D:/Git/SpaceInvaders/GameV0_1/Resources/GameObject.h

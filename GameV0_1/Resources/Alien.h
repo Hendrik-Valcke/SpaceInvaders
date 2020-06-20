@@ -11,11 +11,7 @@
 class Alien : public GameObject{
 public:
     Alien(double cXpos, double cYpos, int cWidth, int cHeight, int cSpeed, Sprite *cSprite) ;
-
     void move(double xDistance, double yDistance);
-private:
-
-
 };
 
 

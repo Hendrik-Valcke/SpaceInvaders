@@ -1,6 +1,5 @@
 #include "GameObject.h"
 
-
 GameObject::GameObject(double cXpos, double cYpos, int cWidth,int cHeight,int cSpeed, Sprite* cSprite )
 {
     xpos= cXpos;

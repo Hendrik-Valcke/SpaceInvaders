@@ -10,9 +10,8 @@
 class Game {
 public:
     Game(Factory *cFactory);//constructor
-    void runScreen();//screen
-    void setFactory(Factory* sFactory);
-    void startGame(); //starts game.
+        void startGame(); //starts game.
+
 private:
     Factory *factory;
     bool isRunning;

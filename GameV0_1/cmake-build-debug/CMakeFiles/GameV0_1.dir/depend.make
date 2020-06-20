@@ -3,16 +3,20 @@
 
 CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: ../Resources/Alien.cpp
 CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: ../Resources/Alien.h
+CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/Alien.cpp.obj: ../Resources/Sprite.h
 
 CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/Alien.h
+CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/EnemyHorde.cpp
 CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/EnemyHorde.h
 CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/EnemyHorde.cpp.obj: ../Resources/Sprite.h
 
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Alien.h
+CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Constants.h
+CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/EnemyHorde.h
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Factory.h
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Game.cpp
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Game.h
@@ -23,12 +27,14 @@ CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/InputHandler.h
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Sprite.h
 CMakeFiles/GameV0_1.dir/Resources/Game.cpp.obj: ../Resources/Window.h
 
+CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj: ../Resources/GameController.cpp
 CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj: ../Resources/GameController.h
 CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj: ../Resources/Sprite.h
 CMakeFiles/GameV0_1.dir/Resources/GameController.cpp.obj: ../Resources/Window.h
 
+CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj: ../Resources/GameObject.cpp
 CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/GameObject.cpp.obj: ../Resources/Sprite.h
@@ -83,6 +89,7 @@ CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: C:/MinGW/include/SDL2/
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: C:/MinGW/include/SDL2/SDL_video.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: C:/MinGW/include/SDL2/begin_code.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: C:/MinGW/include/SDL2/close_code.h
+CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: ../Resources/Factory.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj: ../Resources/Input.h
@@ -170,6 +177,7 @@ CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: C:/MinGW/include/SDL2/S
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: C:/MinGW/include/SDL2/SDL_video.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: C:/MinGW/include/SDL2/begin_code.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: C:/MinGW/include/SDL2/close_code.h
+CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: ../Resources/GameController.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj: ../Resources/SDL/SdlSprite.cpp
@@ -225,12 +233,14 @@ CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: C:/MinGW/include/SDL2/S
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: C:/MinGW/include/SDL2/SDL_video.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: C:/MinGW/include/SDL2/begin_code.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: C:/MinGW/include/SDL2/close_code.h
+CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: ../Resources/GameObject.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: ../Resources/SDL/SdlWindow.cpp
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: ../Resources/SDL/SdlWindow.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: ../Resources/Sprite.h
 CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj: ../Resources/Window.h
 
+CMakeFiles/GameV0_1.dir/main.cpp.obj: ../Resources/Constants.h
 CMakeFiles/GameV0_1.dir/main.cpp.obj: ../Resources/Factory.h
 CMakeFiles/GameV0_1.dir/main.cpp.obj: ../Resources/Game.h
 CMakeFiles/GameV0_1.dir/main.cpp.obj: ../Resources/GameObject.h

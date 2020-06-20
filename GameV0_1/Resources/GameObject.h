@@ -5,6 +5,7 @@
 #ifndef GAMEV0_1_GAMEOBJECT_H
 #define GAMEV0_1_GAMEOBJECT_H
 #include "Sprite.h"
+#include "Constants.h"
 
 class GameObject {
 public:
