@@ -177,6 +177,7 @@ bool SdlWindow:: updateWindow()
     //printf("\nupdating window...");
 
     SDL_RenderPresent( gRenderer );
+    SDL_RenderClear(gRenderer);
     return true;
 
 }
