@@ -1,3 +1,0 @@
-D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir
-D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,0 @@
-"D:\Program Files\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Git\SpaceInvaders\GameV0_1
--- Configuring done
--- Generating done
--- Build files have been written to: D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug
