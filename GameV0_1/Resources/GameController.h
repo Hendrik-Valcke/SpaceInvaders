@@ -14,7 +14,8 @@ public:
 
     //~GameController();
 
-    static GameController &getInstance() {
+    static GameController &getInstance()
+    {
         static GameController instance; // Creeër een instance
         return instance;
     }

@@ -88,6 +88,9 @@
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Alien.h">
 			<Option target="GameV0_1"/>
 		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Config.h">
+			<Option target="GameV0_1"/>
+		</Unit>
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/EnemyHorde.cpp">
 			<Option target="GameV0_1"/>
 		</Unit>
@@ -142,6 +145,12 @@
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlSprite.h">
 			<Option target="GameV0_1"/>
 		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlText.cpp">
+			<Option target="GameV0_1"/>
+		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlText.h">
+			<Option target="GameV0_1"/>
+		</Unit>
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlWindow.cpp">
 			<Option target="GameV0_1"/>
 		</Unit>
@@ -149,6 +158,9 @@
 			<Option target="GameV0_1"/>
 		</Unit>
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Sprite.h">
+			<Option target="GameV0_1"/>
+		</Unit>
+		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Text.h">
 			<Option target="GameV0_1"/>
 		</Unit>
 		<Unit filename="D:/Git/SpaceInvaders/GameV0_1/Resources/Window.h">

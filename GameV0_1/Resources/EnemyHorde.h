@@ -10,10 +10,13 @@
 #include "Alien.h"
 
 class EnemyHorde {
+public:
+    EnemyHorde(Sprite* sprite1,Sprite* sprite2,Sprite* sprite3);
+
 private:
-    std::vector<Alien> row1();
-    std::vector<Alien> row2;
-    std::vector<Alien> row3;
+    std::vector<Alien*> row1;
+    std::vector<Alien*> row2;
+    std::vector<Alien*> row3;
 };
 
 

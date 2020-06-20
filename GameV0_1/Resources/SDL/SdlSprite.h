@@ -6,8 +6,8 @@
 #define GAMEV0_1_SDLSPRITE_H
 
 
-#include <SDL_render.h>
-#include <SDL_image.h>
+#include <SDL2/SDL_render.h>
+#include <SDL2/SDL_image.h>
 #include "../Sprite.h"
 
 class SdlSprite: public Sprite{

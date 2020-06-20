@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj"
   "CMakeFiles/GameV0_1.dir/Resources/SDL/SdlInputHandler.cpp.obj"
   "CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj"
+  "CMakeFiles/GameV0_1.dir/Resources/SDL/SdlText.cpp.obj"
   "CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj"
   "CMakeFiles/GameV0_1.dir/main.cpp.obj"
   "GameV0_1.exe"

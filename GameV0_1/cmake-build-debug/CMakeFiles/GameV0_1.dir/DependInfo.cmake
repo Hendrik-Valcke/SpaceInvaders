@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlFactory.cpp" "D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir/Resources/SDL/SdlFactory.cpp.obj"
   "D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlInputHandler.cpp" "D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir/Resources/SDL/SdlInputHandler.cpp.obj"
   "D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlSprite.cpp" "D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.obj"
+  "D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlText.cpp" "D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir/Resources/SDL/SdlText.cpp.obj"
   "D:/Git/SpaceInvaders/GameV0_1/Resources/SDL/SdlWindow.cpp" "D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir/Resources/SDL/SdlWindow.cpp.obj"
   "D:/Git/SpaceInvaders/GameV0_1/main.cpp" "D:/Git/SpaceInvaders/GameV0_1/cmake-build-debug/CMakeFiles/GameV0_1.dir/main.cpp.obj"
   )

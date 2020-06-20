@@ -365,6 +365,33 @@ Resources/SDL/SdlSprite.cpp.s:
 	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlSprite.cpp.s
 .PHONY : Resources/SDL/SdlSprite.cpp.s
 
+Resources/SDL/SdlText.obj: Resources/SDL/SdlText.cpp.obj
+
+.PHONY : Resources/SDL/SdlText.obj
+
+# target to build an object file
+Resources/SDL/SdlText.cpp.obj:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlText.cpp.obj
+.PHONY : Resources/SDL/SdlText.cpp.obj
+
+Resources/SDL/SdlText.i: Resources/SDL/SdlText.cpp.i
+
+.PHONY : Resources/SDL/SdlText.i
+
+# target to preprocess a source file
+Resources/SDL/SdlText.cpp.i:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlText.cpp.i
+.PHONY : Resources/SDL/SdlText.cpp.i
+
+Resources/SDL/SdlText.s: Resources/SDL/SdlText.cpp.s
+
+.PHONY : Resources/SDL/SdlText.s
+
+# target to generate assembly for a file
+Resources/SDL/SdlText.cpp.s:
+	$(MAKE) -f CMakeFiles\GameV0_1.dir\build.make CMakeFiles/GameV0_1.dir/Resources/SDL/SdlText.cpp.s
+.PHONY : Resources/SDL/SdlText.cpp.s
+
 Resources/SDL/SdlWindow.obj: Resources/SDL/SdlWindow.cpp.obj
 
 .PHONY : Resources/SDL/SdlWindow.obj
@@ -455,6 +482,9 @@ help:
 	@echo ... Resources/SDL/SdlSprite.obj
 	@echo ... Resources/SDL/SdlSprite.i
 	@echo ... Resources/SDL/SdlSprite.s
+	@echo ... Resources/SDL/SdlText.obj
+	@echo ... Resources/SDL/SdlText.i
+	@echo ... Resources/SDL/SdlText.s
 	@echo ... Resources/SDL/SdlWindow.obj
 	@echo ... Resources/SDL/SdlWindow.i
 	@echo ... Resources/SDL/SdlWindow.s
