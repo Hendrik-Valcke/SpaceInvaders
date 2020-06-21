@@ -16,11 +16,13 @@ const int ENEMY_H = 64;
 const int ENEMY_X_START=64;
 const int ENEMY_Y_START=64;
 const int ENEMY_SPEED = 1;
+const int MAX_EN_COOLDOWN=3000;
 //player
 const int MAX_HEALTH = 3;
 const int PLAYER_H=64;
 const int PLAYER_W=64;
 const int PLAYER_SPEED = 20;
+const int MAX_PL_COOLDOWN=3000;
 //bullets
 const int BULLET_W= 32;
 const int BULLET_H= 32;

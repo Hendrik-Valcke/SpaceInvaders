@@ -40,45 +40,14 @@ void Game::startGame()
     Input input;
     score=0;
     setupLevel(1);
-    //load sprites
-    /*Sprite* background =factory->createSprite("Sprites/spaceTheme/background.png");
-    Sprite* playerSprite =factory->createSprite("Sprites/spaceTheme/playerShip.png");
-    Sprite* alienSprite =factory->createSprite("Sprites/spaceTheme/alien.png");
-    Sprite* alien2Sprite =factory->createSprite("Sprites/spaceTheme/alien2.png");
-    Sprite* alien3Sprite =factory->createSprite("Sprites/spaceTheme/alien3.png");
-    Sprite* bulletSprite =factory->createSprite("Sprites/spaceTheme/bullet.png");
-    Sprite* enemyBulletSprite =factory->createSprite("Sprites/spaceTheme/enemyBullet.png");
-    Sprite* bonusSprite =factory->createSprite("Sprites/spaceTheme/bonusGreen.png");
-    Sprite* healthSprite =factory->createSprite("Sprites/spaceTheme/life.png");
-
-    //make enemies (bottom row is row1...)
-    EnemyHorde* enemies= new EnemyHorde(alien3Sprite,alien2Sprite, alienSprite);
-
-    //make player
-    GameObject *player = new GameObject(SCREEN_W/2,SCREEN_H -2*PLAYER_H ,PLAYER_W,PLAYER_H,PLAYER_SPEED,playerSprite);
-    player->setHealth(3);
-
-    //make bonus
-    GameObject *bonus = new GameObject(BONUS_START_X, BONUS_START_Y, BONUS_W ,BONUS_H,BONUS_SPEED,bonusSprite);
-    bonus->setHealth(0);
-
-    //make bulletVectors
-    Bullets* enemyBullets = new Bullets(true, enemyBulletSprite);
-    Bullets* playerBullets = new Bullets(false, bulletSprite);
-    */
     //make Text
-    //int score = 0;
-    //int level = 1;
     scoreText = factory->createText("Score: 0",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
-
-
-
-    //int frameCounter=0;
     //uint32_t catchupTime=0;
 
     //setup is done, start gameloop
     while(isRunning)
     {
+        //check if level should be ended
         if(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty())//all enemies are dead
         {
             setupLevel(level+1);
@@ -90,7 +59,12 @@ void Game::startGame()
         {
             //start timer for start of frame/gameLoopIteration
             uint32_t framestart = screen->sendTicks();
-
+            //counters
+            frameCounter++;
+            if (frameCounter> 600)
+            {frameCounter=0;}
+            playerCooldDown--;
+            enemyCoolDown--;
             //input + playermovement+shooting
             input.clearInput();
             iHandler->handleInput();
@@ -108,17 +82,14 @@ void Game::startGame()
             {
                 isRunning = false;
             }
-            if(input.isFire())
+            if(input.isFire() and playerCooldDown<=0)
             {
                 //make player bullet...
                 playerBullets->addBullet(player->getXpos(),player->getYpos());
+                playerCooldDown=MAX_PL_COOLDOWN;
             }
-
-
             //logica
-            frameCounter++;
-            if (frameCounter> 600)
-            {frameCounter=0;}
+
             //move objects every 30 frames
             if (frameCounter % 30 == 0)
             {
@@ -137,16 +108,17 @@ void Game::startGame()
                 }
             }
             //chance for enemyBullet every 60 frames
-            if ((frameCounter+10)% 60 == 0)
+            if (enemyCoolDown<=0 and (frameCounter+10)% 60 == 0)
             {
                 //random chance enemy shoots back
                 if (!(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty()))
                 {
-                    int randomRow = enemies->returnRandomRow();
-                    int randomEnemy = enemies->returnRandomEnemyOnRow(randomRow);
                     if (rand()%100==1)
                     {
+                        int randomRow = enemies->returnRandomRow();
+                        int randomEnemy = enemies->returnRandomEnemyOnRow(randomRow);
                         enemyBullets->addBullet(enemies->getRow(randomRow)->at(randomEnemy)->getXpos(),enemies->getRow(randomRow)->at(randomEnemy)->getYpos()); //create enemy bullet...
+                        enemyCoolDown=MAX_EN_COOLDOWN;
                     }
                 }
             }
@@ -267,6 +239,8 @@ void Game::setupLevel(int lvl)
 {
     level=lvl;
     frameCounter=0;
+    playerCooldDown=0;
+    enemyCoolDown=0;
     background =factory->createSprite("Sprites/spaceTheme/background.png");
     playerSprite =factory->createSprite("Sprites/spaceTheme/playerShip.png");
     alien1Sprite =factory->createSprite("Sprites/spaceTheme/alien.png");

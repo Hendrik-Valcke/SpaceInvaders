@@ -18,6 +18,8 @@ public:
 private:
     Factory *factory;
     bool isRunning;
+    int playerCooldDown;
+    int enemyCoolDown;
     int score;
     int level;
     int frameCounter;
