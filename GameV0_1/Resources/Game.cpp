@@ -55,6 +55,10 @@ void Game::startGame()
     GameObject *player = new GameObject(SCREEN_W/2,SCREEN_H -2*PLAYER_H ,PLAYER_W,PLAYER_H,PLAYER_SPEED,playerSprite);
     player->setHealth(3);
 
+    //make bonus
+    GameObject *bonus = new GameObject(BONUS_START_X, BONUS_START_Y, BONUS_W ,BONUS_H,BONUS_SPEED,bonusSprite);
+    bonus->setHealth(0);
+
     //make bulletVectors
     Bullets* enemyBullets = new Bullets(true, enemyBulletSprite);
     Bullets* playerBullets = new Bullets(false, bulletSprite);
@@ -98,9 +102,19 @@ void Game::startGame()
                 enemies->moveHorde();
                 playerBullets->moveBullets();
                 enemyBullets->moveBullets();
+                if (bonus->getHealth()==1)//if there is a bonus alive
+                {
+                    if(bonus->getXpos()+BONUS_W>=0)
+                    {
+                        bonus->move(1,0);
+                    } else
+                    {
+                        bonus->setHealth(0);
+                    }
+                }
             }
             //chance for enemyBullet every 40 frames
-            if ((frameCounter+10) % 40 == 0)
+            if ((frameCounter+10)% 40 == 0)
             {
                 //random chance enemy shoots back
                 if (!(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty()))
@@ -113,6 +127,17 @@ void Game::startGame()
                     }
                 }
             }
+
+            //chance for bonus every 50 frames
+        if ((frameCounter+10)%50 == 0)
+        {
+            if (rand()%2000==1 and bonus->getHealth()==0)//only if there is no bonus alive
+            {
+                bonus->setHealth(1);
+                bonus->setSpeed(-1);
+                bonus->setXpos(SCREEN_W);//right of screen
+            }
+        }
 
             //check all bullets for collisions or borders
                 //collision? kill objects & adjust score/health/...
@@ -132,6 +157,14 @@ void Game::startGame()
                 }
             }
         }
+        if (bonus->getHealth()==1)
+        {
+            if (playerBullets->checkCollision(bonus))
+            {
+                bonus->setHealth(0);
+                player->setHealth(player->getHealth()+1);
+            }
+        }
         if (enemyBullets->checkCollision(player))
         {
             player->setHealth(player->getHealth()-1);
@@ -141,16 +174,6 @@ void Game::startGame()
                 player->setHealth(4);
             }
         }
-         /*   //random chance enemy shoots back
-                //create enemy bullet...
-                int random = rand()%3;
-                int temp = rand()%enemies->getRow(random)->size()-1;
-
-            if (rand()%5000==1)
-            {
-                enemyBullets->addBullet(enemies->getRow(random)->at(temp)->getXpos(),enemies->getRow(random)->at(temp)->getYpos());
-            }*/
-            //random chance bonus spawns
 
         //render
         screen->applyTexture(0,0,SCREEN_W,SCREEN_H,background );//background
@@ -172,12 +195,16 @@ void Game::startGame()
         {
             screen->renderGameObject(x);
         }
-
         for (GameObject* x: enemyBullets->getBulletVector())
         {
             screen->renderGameObject(x);
         }
             //bonus
+        if(bonus->getHealth()==1)
+        {
+            screen->renderGameObject(bonus);
+        }
+
         //last step of loop:
         //calculate time passed during this iteration of gameLoop
         uint32_t timePassed = screen->sendTicks()-framestart;
