@@ -20,14 +20,6 @@ void SdlInputHandler::handleInput()
         }
             //User presses a key
         const Uint8* currentKeyStates = SDL_GetKeyboardState( nullptr );
-        if( currentKeyStates[ SDL_SCANCODE_UP ] )
-        {
-            input.setUp(1);
-        }
-        if( currentKeyStates[ SDL_SCANCODE_DOWN ] )
-        {
-            input.setDown(1);
-        }
         if( currentKeyStates[ SDL_SCANCODE_LEFT ] )
         {
             input.setLeft(1);

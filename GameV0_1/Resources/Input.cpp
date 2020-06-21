@@ -6,8 +6,6 @@
 
 void Input::clearInput()
 {
-    up= 0;
-    down= 0;
     left= 0;
     right= 0;
     fire= false;
@@ -28,22 +26,6 @@ int Input::getRight() const {
 
 void Input::setRight(int right) {
     Input::right = right;
-}
-
-int Input::getUp() const {
-    return up;
-}
-
-void Input::setUp(int up) {
-    Input::up = up;
-}
-
-int Input::getDown() const {
-    return down;
-}
-
-void Input::setDown(int down) {
-    Input::down = down;
 }
 
 bool Input::isFire() const {

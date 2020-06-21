@@ -66,12 +66,14 @@ void Game::startGame()
     Bullets* playerBullets = new Bullets(false, bulletSprite);
 
     //make Text
-    std::string test= "testString";
-    Text* score = factory->createText(test,SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
-    //Text* score = factory->createText(Score:,SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+    int score = 0;
+    int level = 1;
+    Text* scoreText = factory->createText("test",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+    //Text* levelText = factory->createText("test",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+
 
     int frameCounter=0;
-    uint32_t catchupTime;
+    uint32_t catchupTime=0;
 
     //setup is done, start gameloop
     while(isRunning)
@@ -80,6 +82,7 @@ void Game::startGame()
         uint32_t framestart = screen->sendTicks();
 
         //input + playermovement+shooting
+        input.clearInput();
         iHandler->handleInput();
         input = iHandler->getInput();
         //check for border
@@ -100,7 +103,7 @@ void Game::startGame()
             //make player bullet...
             playerBullets->addBullet(player->getXpos(),player->getYpos());
         }
-        input.clearInput();
+
 
         //logica
             //move objects every 20 frames
@@ -136,14 +139,17 @@ void Game::startGame()
                 }
             }
 
-            //chance for bonus every 50 frames
-        if ((frameCounter+10)%50 == 0)
+            //chance for bonus every 40 frames
+        if ((frameCounter+20)%40 == 0)
         {
-            if (rand()%2000==1 and bonus->getHealth()==0)//only if there is no bonus alive
+            if (bonus->getHealth()==0)//only if there is no bonus alive
             {
-                bonus->setHealth(1);
-                bonus->setSpeed(-1);
-                bonus->setXpos(SCREEN_W);//right of screen
+                if (rand()%2000==1)
+                {
+                    bonus->setHealth(1);
+                    bonus->setSpeed(-1);
+                    bonus->setXpos(SCREEN_W);//right of screen
+                }
             }
         }
 
@@ -159,6 +165,7 @@ void Game::startGame()
                     //collision? delete enemy
                     enemies->getRow(i)->erase(enemies->getRow(i)->begin()+index);//if an enemy gets deleted, the next one will appear at the same index so no i++
                     //adjust score
+                    score= score+i*10;
                 } else
                 {
                     index++;//if no enemy gets deleted, go to next index
@@ -176,7 +183,7 @@ void Game::startGame()
         if (enemyBullets->checkCollision(player))
         {
             player->setHealth(player->getHealth()-1);
-            if (player->getHealth()<=0)
+            if (player->getHealth()<=0)//player dies
             {
                 //isRunning=false;
                 player->setHealth(4);
@@ -214,7 +221,9 @@ void Game::startGame()
         }
 
         //text
-        screen->applyTextTexture(score);
+
+        scoreText->setText("Score: "+ std::to_string(score));
+        screen->applyTextTexture(scoreText);
         //last step of loop:
         //calculate time passed during this iteration of gameLoop
         uint32_t timePassed = screen->sendTicks()-framestart;

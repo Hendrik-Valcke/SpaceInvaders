@@ -1,7 +1,7 @@
 //
 // Created by hendr on 02/03/2020.
 //
-
+#include <string>
 #include "../Window.h"
 #include "SdlFactory.h"
 #include "SdlWindow.h"

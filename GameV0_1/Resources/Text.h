@@ -6,7 +6,7 @@
 #define GAMEV0_1_TEXT_H
 
 #include <iostream>
-
+#include <string>
 
 class Text {
 public:

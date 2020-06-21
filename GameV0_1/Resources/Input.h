@@ -21,14 +21,6 @@ public:
 
     void setRight(int right);
 
-    int getUp() const;
-
-    void setUp(int up);
-
-    int getDown() const;
-
-    void setDown(int down);
-
     bool isFire() const;
 
     void setFire(bool fire);
@@ -41,8 +33,6 @@ public:
 private:
     int left;
     int  right;
-    int up;
-    int down;
     bool fire;
     bool quit;
 

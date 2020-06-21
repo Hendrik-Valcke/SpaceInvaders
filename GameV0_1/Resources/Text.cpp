@@ -16,8 +16,10 @@ const std::string &Text::getText() const {
     return text;
 }
 
-void Text::setText(const std::string &text) {
-    Text::text = text;
+void Text::setText(const std::string &text)
+{
+    this->text = text;
+    generateTexture()  ;
 }
 
 int Text::getCharSize() const {
