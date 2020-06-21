@@ -15,6 +15,8 @@ public:
     EnemyHorde(Sprite* sprite1,Sprite* sprite2,Sprite* sprite3);
     void moveHorde();
     std::vector<Alien*>* getRow(int row);
+    int returnRandomRow();
+    int returnRandomEnemyOnRow(int row);
 
 private:
     std::vector<Alien*> row1;

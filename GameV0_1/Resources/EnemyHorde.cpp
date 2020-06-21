@@ -140,3 +140,20 @@ void EnemyHorde::moveHorde()
 
 }
 
+int EnemyHorde::returnRandomRow()
+{
+    int randomRow = rand()%3 +1;
+    if (getRow(randomRow)->empty())
+    {
+        returnRandomRow();
+    } else
+    {
+        return randomRow;
+    }
+}
+int EnemyHorde::returnRandomEnemyOnRow(int row)
+{
+    int randomEnemy = rand()%getRow(row)->size();
+    return randomEnemy;
+}
+

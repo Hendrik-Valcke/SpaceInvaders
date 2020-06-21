@@ -99,6 +99,20 @@ void Game::startGame()
                 playerBullets->moveBullets();
                 enemyBullets->moveBullets();
             }
+            //chance for enemyBullet every 40 frames
+            if ((frameCounter+10) % 40 == 0)
+            {
+                //random chance enemy shoots back
+                if (!(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty()))
+                {
+                    int randomRow = enemies->returnRandomRow();
+                    int randomEnemy = enemies->returnRandomEnemyOnRow(randomRow);
+                    if (rand()%100==1)
+                    {
+                        enemyBullets->addBullet(enemies->getRow(randomRow)->at(randomEnemy)->getXpos(),enemies->getRow(randomRow)->at(randomEnemy)->getYpos()); //create enemy bullet...
+                    }
+                }
+            }
 
             //check all bullets for collisions or borders
                 //collision? kill objects & adjust score/health/...
@@ -118,16 +132,24 @@ void Game::startGame()
                 }
             }
         }
-        enemyBullets->checkCollision(player);
-            //random chance enemy shoots back
+        if (enemyBullets->checkCollision(player))
+        {
+            player->setHealth(player->getHealth()-1);
+            if (player->getHealth()<=0)
+            {
+                //isRunning=false;
+                player->setHealth(4);
+            }
+        }
+         /*   //random chance enemy shoots back
                 //create enemy bullet...
                 int random = rand()%3;
-                int temp = rand()%enemies->getRow(random)->size();
+                int temp = rand()%enemies->getRow(random)->size()-1;
 
             if (rand()%5000==1)
             {
                 enemyBullets->addBullet(enemies->getRow(random)->at(temp)->getXpos(),enemies->getRow(random)->at(temp)->getYpos());
-            }
+            }*/
             //random chance bonus spawns
 
         //render
