@@ -8,6 +8,7 @@
 #include <SDL2/SDL_video.h>
 #include <SDL2/SDL_image.h>
 #include "../Window.h"
+#include "../Text.h"
 #include <SDL2/SDL_ttf.h>
 
 class SdlWindow: public Window{
@@ -18,6 +19,7 @@ public:
     void delayFrame(uint32_t time) override ;
     bool makeWindow() override ;
     bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr) override ;
+    bool applyTextTexture(Text* text) override ;
     bool renderGameObject(GameObject* object) override ;
     bool loadMedia() override ;
     SDL_Texture* loadTexture( std::string path )  ;

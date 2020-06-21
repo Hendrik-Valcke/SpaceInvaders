@@ -30,12 +30,13 @@ const int BONUS_H=64;
 const int BONUS_W=64;
 const int BONUS_START_X= 0-BONUS_W;
 const int BONUS_START_Y=BONUS_H/2;
-
 const int BONUS_SPEED=1;
-
 //health
 const int HEALTH_W=32;
 const int HEALTH_H=32;
+//text
+const int SCORE_X=32;
+const int SCORE_Y=32;
 
 
 

@@ -7,6 +7,7 @@
 #include "SdlWindow.h"
 #include "SdlInputHandler.h"
 #include "SdlSprite.h"
+#include "SdlText.h"
 
 Window* SdlFactory::createWindow() {
     Window *window = new SdlWindow;
@@ -25,3 +26,9 @@ Sprite* SdlFactory::createSprite(std::string cPath)
     sprite->setTexture(cPath);
     return sprite;
 }
+
+Text* SdlFactory::createText(std::string text, int x, int y, int fontSize, std::string font)
+{
+    return new SdlText(text, x, y, fontSize, font);
+}
+

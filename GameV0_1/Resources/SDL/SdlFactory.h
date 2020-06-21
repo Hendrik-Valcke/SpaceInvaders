@@ -13,6 +13,7 @@ class SdlFactory: public Factory{
     Window* createWindow() override;
     InputHandler* createInputHandler() override ;
     Sprite* createSprite(std::string cPath) override ;
+    Text* createText(std::string text, int x, int y, int fontSize, std::string font) override ;
 };
 
 

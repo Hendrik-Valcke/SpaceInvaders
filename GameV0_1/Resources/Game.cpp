@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <cmath>
 #include "Game.h"
@@ -11,6 +12,7 @@
 #include "Alien.h"
 #include "EnemyHorde.h"
 #include "Bullets.h"
+#include "Text.h"
 
 Game::Game(Factory *cFactory)
 {
@@ -62,6 +64,12 @@ void Game::startGame()
     //make bulletVectors
     Bullets* enemyBullets = new Bullets(true, enemyBulletSprite);
     Bullets* playerBullets = new Bullets(false, bulletSprite);
+
+    //make Text
+    std::string test= "testString";
+    Text* score = factory->createText(test,SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+    //Text* score = factory->createText(Score:,SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+
     int frameCounter=0;
     uint32_t catchupTime;
 
@@ -205,6 +213,8 @@ void Game::startGame()
             screen->renderGameObject(bonus);
         }
 
+        //text
+        screen->applyTextTexture(score);
         //last step of loop:
         //calculate time passed during this iteration of gameLoop
         uint32_t timePassed = screen->sendTicks()-framestart;

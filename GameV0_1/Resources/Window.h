@@ -7,6 +7,7 @@
 #include <string>
 #include "Sprite.h"
 #include "GameObject.h"
+#include "Text.h"
 
 class Window {
 public:
@@ -17,6 +18,7 @@ public:
     virtual bool loadMedia() =0;
 
     virtual bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)=0;
+    virtual bool applyTextTexture(Text* text)=0;
     virtual bool renderGameObject ( GameObject* object)=0;
     virtual bool applyMedia()=0;
     virtual bool closeWindow()=0;

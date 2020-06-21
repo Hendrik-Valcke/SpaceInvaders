@@ -74,6 +74,12 @@ bool SdlWindow::makeWindow()
                     printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
                     success = false;
                 }
+                //Initialize SDL_ttf
+                if( TTF_Init() == -1 )
+                {
+                    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+                    success = false;
+                }
             }
         }
     }
@@ -136,6 +142,18 @@ bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprH
     destRect.w = sprWidth;
     destRect.h = sprHeight;
     SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
+    return true; //nog condities adden
+}
+
+bool SdlWindow:: applyTextTexture( Text* text)
+{
+    //printf("\napplying texture...");
+    SDL_Rect destRect;
+    destRect.x = text->getXPos();
+    destRect.y = text->getYPos();
+    destRect.w = text->getWidth();
+    destRect.h = text->getHeight();
+    SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(text->getTexture()), NULL, &destRect );
     return true; //nog condities adden
 }
 

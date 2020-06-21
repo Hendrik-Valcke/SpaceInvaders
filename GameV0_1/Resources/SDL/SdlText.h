@@ -12,18 +12,12 @@
 
 class SdlText: public Text{
 public:
-    SdlText(std::string text,int x, int y, int size, std::string path)  ;
+    SdlText(std::string text,int x, int y, int size, std::string path) ;
     void generateTexture() override;
-    void* getTexture();
+    void* getTexture() override ;
 
 private:
-    TTF_Font* font;
-    std::string text;
-    int width;
-    int height;
     SDL_Texture* textTexture;
-
-
 };
 
 
