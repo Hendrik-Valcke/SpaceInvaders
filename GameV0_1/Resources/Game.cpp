@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include "Game.h"
 #include "GameObject.h"
 #include "GameController.h"
@@ -45,6 +46,7 @@ void Game::startGame()
     Sprite* bulletSprite =factory->createSprite("Sprites/spaceTheme/bullet.png");
     Sprite* enemyBulletSprite =factory->createSprite("Sprites/spaceTheme/enemyBullet.png");
     Sprite* bonusSprite =factory->createSprite("Sprites/spaceTheme/bonusGreen.png");
+    Sprite* healthSprite =factory->createSprite("Sprites/spaceTheme/life.png");
 
     //make enemies (bottom row is row1...)
     EnemyHorde* enemies= new EnemyHorde(alien3Sprite,alien2Sprite, alienSprite);
@@ -95,6 +97,7 @@ void Game::startGame()
             {
                 enemies->moveHorde();
                 playerBullets->moveBullets();
+                enemyBullets->moveBullets();
             }
 
             //check all bullets for collisions or borders
@@ -115,13 +118,24 @@ void Game::startGame()
                 }
             }
         }
-
+        enemyBullets->checkCollision(player);
             //random chance enemy shoots back
                 //create enemy bullet...
+                int random = rand()%3;
+                int temp = rand()%enemies->getRow(random)->size();
+
+            if (rand()%5000==1)
+            {
+                enemyBullets->addBullet(enemies->getRow(random)->at(temp)->getXpos(),enemies->getRow(random)->at(temp)->getYpos());
+            }
             //random chance bonus spawns
 
         //render
         screen->applyTexture(0,0,SCREEN_W,SCREEN_H,background );//background
+        for (int j = 0; j < player->getHealth(); ++j)
+        {
+            screen->applyTexture(SCREEN_W -3*HEALTH_W-j*HEALTH_W,HEALTH_H,HEALTH_W,HEALTH_H, healthSprite);//health
+        }
         screen->renderGameObject(player);//player
             //enemies
         for (int i = 1; i <= 3; ++i)
@@ -133,6 +147,11 @@ void Game::startGame()
         }
             //bullets
         for (GameObject* x: playerBullets->getBulletVector())
+        {
+            screen->renderGameObject(x);
+        }
+
+        for (GameObject* x: enemyBullets->getBulletVector())
         {
             screen->renderGameObject(x);
         }

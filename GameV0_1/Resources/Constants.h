@@ -23,10 +23,12 @@ const int PLAYER_W=64;
 const int PLAYER_SPEED = 20;
 //bullets
 const int BULLET_W= 32;
-const int BULLET_H=32;
+const int BULLET_H= 32;
 const int BULLET_SPEED = 2;
 //bonus
-
+//health
+const int HEALTH_W=32;
+const int HEALTH_H=32;
 
 
 
