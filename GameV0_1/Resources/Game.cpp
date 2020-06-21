@@ -68,8 +68,8 @@ void Game::startGame()
     //make Text
     int score = 0;
     int level = 1;
-    Text* scoreText = factory->createText("test",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
-    //Text* levelText = factory->createText("test",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+    Text* scoreText = factory->createText("Score: 0",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
+    Text* levelText = factory->createText("Level 1",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
 
 
     int frameCounter=0;
@@ -106,9 +106,11 @@ void Game::startGame()
 
 
         //logica
-            //move objects every 20 frames
             frameCounter++;
-            if (frameCounter % 20 == 0)
+            if (frameCounter> 600)
+                {frameCounter=0;}
+        //move objects every 20 frames
+            if (frameCounter % 30 == 0)
             {
                 enemies->moveHorde();
                 playerBullets->moveBullets();
@@ -221,8 +223,10 @@ void Game::startGame()
         }
 
         //text
-
-        scoreText->setText("Score: "+ std::to_string(score));
+        if(frameCounter%30==0)
+        {
+            scoreText->setText("Score: "+ std::to_string(score));
+        }
         screen->applyTextTexture(scoreText);
         //last step of loop:
         //calculate time passed during this iteration of gameLoop
@@ -233,7 +237,7 @@ void Game::startGame()
             screen->delayFrame(FRAMES_PER_SEC/1000-timePassed-catchupTime);
             catchupTime = 0;
         }
-        else //timePassed > frameDuration
+        /*else //timePassed > frameDuration
         {
             catchupTime = (timePassed-catchupTime-FRAMES_PER_SEC/1000);
             //if the previous frames took way too long, catchupTime could become negative
@@ -241,7 +245,7 @@ void Game::startGame()
             {
                 catchupTime = 0;
             }
-        }
+        }*/
         screen->updateWindow();
     }//repeat while game IsRunning
 
