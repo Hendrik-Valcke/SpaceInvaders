@@ -14,7 +14,7 @@ class EnemyHorde {
 public:
     EnemyHorde(Sprite* sprite1,Sprite* sprite2,Sprite* sprite3);
     void moveHorde();
-    std::vector<Alien*> getRow(int row);
+    std::vector<Alien*>* getRow(int row);
 
 private:
     std::vector<Alien*> row1;

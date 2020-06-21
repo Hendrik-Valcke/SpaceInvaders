@@ -11,12 +11,16 @@
 
 class Bullets {
 public:
+    Bullets(bool isHostile,Sprite* sprite);
     void addBullet(int xPos, int yPos);
-    void checkCollision( GameObject target);
+    bool checkCollision( GameObject* target);
+    void moveBullets();
+    std::vector<GameObject*>getBulletVector();
 
 private:
-    std::vector<GameObject*> Bullets;
+    std::vector<GameObject*> bullets;
     bool isHostile;
+    Sprite* bulletSprite;
 };
 
 

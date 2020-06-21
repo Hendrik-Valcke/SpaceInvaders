@@ -58,7 +58,7 @@ void GameObject::setObjectSprite(Sprite *objectSprite) {
     GameObject::objectSprite = objectSprite;
 }
 
-void GameObject::moveObject(bool left, bool up)
+/*void GameObject::moveObject(bool left, bool up)
 {
     if (left)
     {
@@ -77,17 +77,19 @@ void GameObject::moveObject(bool left, bool up)
     {
         ypos = ypos + speed;
     }
-}
+}*/
 
 int GameObject::getHealth() const {
     return health;
 }
-
 void GameObject::setHealth(int health) {
     GameObject::health = health;
 }
-
-
+void GameObject::move(double xDistance, double yDistance)
+{
+    xpos= xpos+xDistance*speed;
+    ypos= ypos+yDistance*speed;
+}
 
 
 

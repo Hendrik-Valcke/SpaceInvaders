@@ -9,38 +9,24 @@
 
 class GameObject {
 public:
-    //GameObject();
     GameObject(double cXpos, double cYpos, int width, int height,int speed, Sprite* cSprite);
 
-    void moveObject(bool left, bool up);
-    void shoot(bool direction);
-
+    //void moveObject(bool left, bool up);
+    void move(double xDistance, double yDistance);
+    //void shoot(bool direction);
     int getSpeed() const;
-
     void setSpeed(int xpos);
-
     double getXpos() const;
-
     void setXpos(double xpos);
-
     double getYpos() const;
-
     void setYpos(double ypos);
-
     int getWidth() const;
-
     void setWidth(int width);
-
     int getHeight() const;
-
     void setHeight(int height);
-
     Sprite *getObjectSprite() const;
-
     void setObjectSprite(Sprite *objectSprite);
-
     int getHealth() const;
-
     void setHealth(int health);
 
 protected:

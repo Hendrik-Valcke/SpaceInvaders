@@ -22,20 +22,19 @@ EnemyHorde::EnemyHorde(Sprite* sprite3,Sprite* sprite2,Sprite* sprite1)
     }
 }
 
-std::vector<Alien*> EnemyHorde::getRow(int row)
+std::vector<Alien*>* EnemyHorde::getRow(int row)
 {
     switch(row) {
         case 1:
-            return row1;
+            return &row1;
             break;
         case 2:
-            return row2;
+            return &row2;
             break;
         case 3:
-            return row3;
+            return &row3;
             break;
-        default:
-            return row3;
+
     }
 }
 
@@ -43,7 +42,27 @@ void EnemyHorde::moveHorde()
 {
     if (goingRight)
     {
-        if( (row3[row3.size()-1]->getXpos() + ENEMY_W < SCREEN_W  )  or (row2[row2.size()-1]->getXpos() + ENEMY_W < SCREEN_W) or (row1[row1.size()-1]->getXpos() + ENEMY_W < SCREEN_W))
+        int mostRightEnemyX=0;
+        //int mostleftEnemyX=0;
+        int lowestEnemyY=0;
+        if (!row1.empty())
+        {
+            mostRightEnemyX=row1[row1.size()-1]->getXpos();
+            //mostLeftEnemyX=row1[row1.size()-1]->getXpos();
+            lowestEnemyY = row1[0]->getYpos();
+        }
+        if (!row2.empty())
+        {
+            mostRightEnemyX=std::max((int)row2[row2.size()-1]->getXpos(),mostRightEnemyX);
+            lowestEnemyY = std::max((int)row2[0]->getYpos(), lowestEnemyY);
+        }
+        if (!row3.empty())
+        {
+            mostRightEnemyX=std::max((int)row3[row3.size()-1]->getXpos(),mostRightEnemyX);
+            lowestEnemyY = std::max((int)row3[0]->getYpos(), lowestEnemyY);
+        }
+
+        if( (mostRightEnemyX + ENEMY_W < SCREEN_W))//last enemy of row 1 doesnt right border
         {
             for (Alien* x: row3)
             {
@@ -60,7 +79,7 @@ void EnemyHorde::moveHorde()
         } else
         {
             goingRight = false;
-            if(row1[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H or row2[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H or row1[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H)
+            if(lowestEnemyY + ENEMY_H < SCREEN_H - 3*ENEMY_H)
             {
                 for (Alien* x: row3)
                 {
@@ -79,7 +98,9 @@ void EnemyHorde::moveHorde()
 
     } else
     {
-        if((row3[0]->getXpos() > 0) or (row2[0]->getXpos() > 0) or (row1[0]->getXpos() > 0))
+        if((row3[0]->getXpos() > 0)
+            and (row2[0]->getXpos() > 0)
+            and (row1[0]->getXpos() > 0))
         {
             for (Alien* x: row3)
             {
@@ -96,7 +117,9 @@ void EnemyHorde::moveHorde()
         } else
         {
             goingRight = true;
-            if(row1[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H or row2[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H or row1[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H)
+            if(row1[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H
+                and row2[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H
+                and row1[0]->getYpos() + ENEMY_H < SCREEN_H - 3*ENEMY_H)
             {
                 for (Alien* x: row3)
                 {
