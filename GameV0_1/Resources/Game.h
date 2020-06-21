@@ -6,16 +6,40 @@
 #define GAMEV0_GAME_H
 
 #include "Factory.h"
+#include "EnemyHorde.h"
+#include "Bullets.h"
 
 class Game {
 public:
     Game(Factory *cFactory);//constructor
         void startGame(); //starts game.
+        void setupLevel(int level);//puts everything in starting position
 
 private:
     Factory *factory;
     bool isRunning;
-
+    int score;
+    int level;
+    int frameCounter;
+    //sprites
+    Sprite* background;
+    Sprite* playerSprite;
+    Sprite* alien1Sprite;
+    Sprite* alien2Sprite;
+    Sprite* alien3Sprite;
+    Sprite* bulletSprite;
+    Sprite* enemyBulletSprite;
+    Sprite* bonusSprite;
+    Sprite* healthSprite;
+    //GameObjects
+    EnemyHorde* enemies;
+    GameObject *player;
+    GameObject *bonus;
+    Bullets* enemyBullets;
+    Bullets* playerBullets;
+    //text
+    Text* scoreText;
+    Text* levelText;
 
 };
 

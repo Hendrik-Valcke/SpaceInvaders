@@ -37,6 +37,8 @@ const int HEALTH_H=32;
 //text
 const int SCORE_X=32;
 const int SCORE_Y=32;
+const int LEVEL_X= SCREEN_W/2;
+const int LEVEL_Y=32;
 
 
 
