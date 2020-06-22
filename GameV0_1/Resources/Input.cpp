@@ -3,10 +3,10 @@
 //
 
 #include "Input.h"
-
+using namespace inputSpace;
 void Input::clearInput()
 {
-    left= 0;
+    left= 0;//left and right had numeric values to be able to do left + right =..., this is no longer used
     right= 0;
     fire= false;
     quit= false;

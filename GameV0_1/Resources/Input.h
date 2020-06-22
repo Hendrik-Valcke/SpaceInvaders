@@ -4,12 +4,10 @@
 
 #ifndef GAMEV0_INPUT_H
 #define GAMEV0_INPUT_H
-
-
+namespace inputSpace
+{
 class Input {
 public:
-    //Input();
-    //~Input();
     void clearInput();
     void returnInput();
 
@@ -37,6 +35,6 @@ private:
     bool quit;
 
 };
-
+}
 
 #endif //GAMEV0_INPUT_H

@@ -5,18 +5,19 @@
 #include "EnemyHorde.h"
 
 #include "Constants.h"
+using namespace GameObjectSpace;
 EnemyHorde::EnemyHorde(Sprite* sprite3,Sprite* sprite2,Sprite* sprite1)
 {
-
-    for (int i = 0; i < 6; ++i)
+//a lazy way to make the rows and add 6 enemies per row
+    for (int i = 0; i < ENEMIES_PER_ROW; ++i)
     {
         row3.push_back(new Alien( ENEMY_X_START + i*3*ENEMY_W/2, ENEMY_Y_START, ENEMY_W, ENEMY_H, ENEMY_SPEED, sprite3));
     }
-    for (int j = 0; j < 6; ++j)
+    for (int j = 0; j < ENEMIES_PER_ROW; ++j)
     {
         row2.push_back(new Alien( ENEMY_X_START + j*3*ENEMY_W/2, 2*ENEMY_Y_START, ENEMY_W, ENEMY_H, ENEMY_SPEED, sprite2));
     }
-    for (int k = 0; k < 6; ++k)
+    for (int k = 0; k < ENEMIES_PER_ROW; ++k)
     {
         row1.push_back(new Alien( ENEMY_X_START + k*3*ENEMY_W/2, 3*ENEMY_Y_START, ENEMY_W, ENEMY_H, ENEMY_SPEED, sprite1));
     }

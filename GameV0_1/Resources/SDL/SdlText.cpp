@@ -7,11 +7,12 @@
 #include "SdlWindow.h"
 #include <iostream>
 #include <SDL2/SDL_ttf.h>
+using namespace sdlWindowSpace;
+
 SdlText::SdlText(std::string text, int x,int y, int charSize, std::string path ) : Text(text,x,y,charSize,path)
 {
     //insert constructor from Text Class
     font = TTF_OpenFont(path.c_str(),charSize);
-    //font = TTF_OpenFont("Fonts/8BitMadness.ttf",charSize);
     if( font == NULL )
     {
         printf( "Failed to load font! SDL_ttf Error: %s\n", TTF_GetError() );
@@ -23,7 +24,6 @@ void SdlText::generateTexture()
 {
 
     auto* textSurface = TTF_RenderUTF8_Solid(reinterpret_cast<TTF_Font*>(this->font), this->text.c_str(),{255,255,255});
-    //SDL_Surface* textSurface = TTF_RenderUTF8_Solid(reinterpret_cast<TTF_Font*>(this->font), "test",{255,255,255});
     if( textSurface == NULL )
     {
         printf( "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError() );
@@ -39,14 +39,12 @@ void SdlText::generateTexture()
         {
             printf( "Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError() );
         }
-        /*else
+        else
         {
             //Get image dimensions
             width=textSurface->w;
             height= textSurface->h;
-        }*/
-        width=textSurface->w;
-        height= textSurface->h;
+        }
     }
     SDL_FreeSurface(textSurface);
 }

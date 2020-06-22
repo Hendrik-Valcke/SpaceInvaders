@@ -9,7 +9,7 @@
 #include "../Text.h"
 #include <iostream>
 #include <SDL2/SDL_ttf.h>
-
+using namespace TextSpace;
 class SdlText: public Text{
 public:
     SdlText(std::string text,int x, int y, int size, std::string path) ;

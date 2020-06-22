@@ -8,7 +8,9 @@
 #include "SdlInputHandler.h"
 #include "SdlSprite.h"
 #include "SdlText.h"
-
+//using namespace windowSpace;
+using namespace sdlWindowSpace;
+using namespace sdlInputHandlerSpace;
 Window* SdlFactory::createWindow() {
     Window *window = new SdlWindow;
     return window;

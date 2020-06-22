@@ -6,7 +6,7 @@
 #define GAMEV0_1_SPRITE_H
 #include <string>
 
-class Sprite {
+class Sprite {//abstract class of sprite
 public:
 virtual void setTexture(std::string path )=0;
 virtual void* getTexture()=0;

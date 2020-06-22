@@ -8,12 +8,13 @@
 #include <iostream>
 #include <string>
 
-
-class Text {
+namespace TextSpace
+{
+class Text {//partially abstract class
 public:
     Text( std::string text, int x, int y, int fontsize, std::string path);
-    virtual void generateTexture() = 0;
-    virtual void* getTexture()=0;
+    virtual void generateTexture() = 0;//make a texture from the text
+    virtual void* getTexture()=0;//used to send a texture to the renderer in the game
 
     const std::string &getText() const;
 
@@ -48,5 +49,5 @@ protected:
     int width;
     int height;
 };
-
+}
 #endif //GAMEV0_1_TEXT_H

@@ -6,7 +6,7 @@
 #include "SdlSprite.h"
 #include "../GameController.h"
 #include "SdlWindow.h"
-
+using namespace sdlWindowSpace;
 SdlSprite::SdlSprite(std::string cPath )
 {
     path = cPath;

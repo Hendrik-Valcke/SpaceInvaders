@@ -4,7 +4,7 @@
 
 #ifndef GAMEV0_1_CONSTANTS_H
 #define GAMEV0_1_CONSTANTS_H
-
+//list of commonly used values
 //window
 const int SCREEN_W = 1024;
 const int SCREEN_H = 768;

@@ -21,7 +21,7 @@ Game::Game(Factory *cFactory)
 
 void Game::startGame()
 {
-    //create window
+    //let factory create window
     Window* screen = factory->createWindow();
     if(!screen->makeWindow())
     {
@@ -35,23 +35,24 @@ void Game::startGame()
     }
     GameController::getInstance().setWindow(screen);
 
-    //set up inputHandler
+    //let factory create inputHandler
     InputHandler* iHandler=factory->createInputHandler();
     Input input;
+    //some base values
     score=0;
-    setupLevel(1);
-    //make Text
+    setupLevel(1);//set up all fields to correct value for level 1
+    //let factory make Text for score - is indepenant from level
     scoreText = factory->createText("Score: 0",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
-    uint32_t catchupTime=0;
+    uint32_t catchupTime=0;//buffervalue for fps
 
     //setup is done, start gameloop
     while(isRunning)
     {
-        //check if level should be ended
-        if(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty())//all enemies are dead
+        //check if level should be ended - start new level?
+        if(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty())//all enemies are dead - go to next level
         {
             setupLevel(level+1);
-        } else if (player->getHealth()<=0) //player died
+        } else if (player->getHealth()<=0) //player died - reset to level 1
         {
             setupLevel(1);
             score=0;
@@ -62,7 +63,7 @@ void Game::startGame()
             //counters
             frameCounter++;
             if (frameCounter> 600)
-            {frameCounter=0;}
+            {frameCounter=0;}//to stop it from overflowing
             if (playerCooldDown >0)
             {
                 playerCooldDown--;
@@ -156,7 +157,6 @@ void Game::startGame()
                     }
                 }
             }
-
             //check all bullets for collisions or borders
             //collision? kill objects & adjust score/health/...
             for (int i = 1; i <= 3; ++i)

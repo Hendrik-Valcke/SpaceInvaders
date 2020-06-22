@@ -8,14 +8,14 @@
 #include "Window.h"
 #include "InputHandler.h"
 #include "Text.h"
-
-class Factory {
+using namespace windowSpace;
+using namespace inputHandlerSpace;
+class Factory {//the abstract factory
 public:
     virtual Window* createWindow()=0;
     virtual InputHandler* createInputHandler()=0;
     virtual Sprite* createSprite(std::string cPath)=0;
     virtual Text* createText(std::string text, int x, int y, int fontSize, std::string font) = 0;
-    //virtual void spawnEnemies()=0;
 
 };
 

@@ -5,17 +5,16 @@
 #ifndef GAMEV0_1_GAMECONTROLLER_H
 #define GAMEV0_1_GAMECONTROLLER_H
 
-
 #include "Window.h"
-class GameController {
+using namespace windowSpace;
+class GameController {//used for when sdl objects have to interact with each other
 public:
     GameController() = default;
 
-    //~GameController();
 
     static GameController &getInstance()
     {
-        static GameController instance; // Creeër een instance
+        static GameController instance; // 1 instance
         return instance;
     }
 

@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-
+using namespace GameObjectSpace;
 
 GameObject::GameObject(double cXpos, double cYpos, int cWidth,int cHeight,int cSpeed, Sprite* cSprite )
 {

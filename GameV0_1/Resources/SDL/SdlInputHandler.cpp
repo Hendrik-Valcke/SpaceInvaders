@@ -5,7 +5,9 @@
 #include <SDL2/SDL_events.h>
 #include <iostream>
 #include "SdlInputHandler.h"
-
+using  namespace inputSpace;
+using namespace inputHandlerSpace;
+using namespace sdlInputHandlerSpace;
 
 void SdlInputHandler::handleInput()
 {

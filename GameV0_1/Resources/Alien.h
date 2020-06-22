@@ -7,8 +7,8 @@
 
 
 #include "GameObject.h"
-
-class Alien : public GameObject{
+using namespace GameObjectSpace;
+class Alien : public GameObject{//this class was different to GameObject but has been changed
 public:
     Alien(double cXpos, double cYpos, int cWidth, int cHeight, int cSpeed, Sprite *cSprite) ;
     //void move(double xDistance, double yDistance);

@@ -7,12 +7,13 @@
 
 
 #include "Input.h"
-
-class InputHandler {
+using namespace inputSpace;
+namespace inputHandlerSpace{
+class InputHandler {//handles the input object
 public:
     virtual void handleInput()=0;
     virtual Input getInput()=0;
 };
-
+}
 
 #endif //GAMEV0_INPUTHANDLER_H

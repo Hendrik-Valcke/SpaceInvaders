@@ -3,7 +3,7 @@
 //
 
 #include "Text.h"
-
+using namespace TextSpace;
 Text::Text(std::string text, int x, int y, int size, std::string path)
 {
     xPos=x;

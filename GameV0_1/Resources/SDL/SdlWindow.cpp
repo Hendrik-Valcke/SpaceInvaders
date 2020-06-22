@@ -8,13 +8,11 @@
 #include <stdio.h>
 #include <SDL2/SDL_ttf.h>
 #include <iostream>
-
+using namespace windowSpace;
+using namespace sdlWindowSpace;
 SdlWindow::SdlWindow()
 {
-    //width=SCREEN_W;
-    //height=SCREEN_H;
     title = "Space Invaders";
-    //path = "Sprites/background.png";
 }
 uint32_t SdlWindow::sendTicks()
 {
@@ -85,53 +83,6 @@ bool SdlWindow::makeWindow()
     return success;
 }
 
-/*bool SdlWindow::loadMedia()
-{
-    printf("\nloading media...");
-
-    //Loading success flag
-    bool success = true;
-
-    //Load PNG texture
-    gTexture = loadTexture( path.c_str() );
-    if( gTexture == NULL )
-    {
-        printf( "Failed to load texture image!\n" );
-        success = false;
-    }
-
-    return success;
-}*/
-//wordt niet meer gebruikt
-
-/*SDL_Texture* SdlWindow::loadTexture( std::string path )
-{
-    printf("\nloading texture...");
-
-    //The final texture
-    SDL_Texture* newTexture = NULL;
-
-    //Load image at specified path
-    SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
-    if( loadedSurface == NULL )
-    {
-        printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
-    }
-    else
-    {
-        //Create texture from surface pixels
-        newTexture = SDL_CreateTextureFromSurface( gRenderer, loadedSurface );
-    if( newTexture == NULL )
-    {
-        printf( "Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError() );
-    }
-
-    //Get rid of old loaded surface
-    SDL_FreeSurface( loadedSurface );
-    }
-return newTexture;
-}*/
-
 bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)
 {
     SDL_Rect destRect;
@@ -165,13 +116,6 @@ bool SdlWindow:: renderGameObject(GameObject* object)
     SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
     return true;
 }
-/*bool SdlWindow::applyMedia()
-{
-    //printf("\napplying media...");
-
-    SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
-    return true;
-}*/
 bool SdlWindow:: updateWindow()
 {
     SDL_RenderPresent( gRenderer );
@@ -193,30 +137,7 @@ bool SdlWindow::closeWindow()
     SDL_Quit();
     return true; // nog condities adden
 }
-/*int SdlWindow::getHeight() {
-    return height;
-}
-void SdlWindow::setHeight(int sHeight) {
-     height=sHeight;
-}
-int SdlWindow::getWidth() {
-    return width;
-}
-void SdlWindow::setWidth(int sWidth) {
-    width=sWidth;
-}
-std::string SdlWindow::getTitle() {
-    return title;
-}
-void SdlWindow::setTitle(std::string sTitle) {
-    title=sTitle;
-}
-std::string SdlWindow::getPath() {
-    return path;
-}
-void SdlWindow::setPath(std::string sPath) {
-    path=sPath;
-}*/
+
 
 
 

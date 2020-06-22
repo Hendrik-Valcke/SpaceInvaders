@@ -6,8 +6,8 @@
 #define GAMEV0_1_GAMEOBJECT_H
 #include "Sprite.h"
 #include "Constants.h"
-//namespace GameObjects
-//{
+namespace GameObjectSpace
+{
 class GameObject {
 public:
     GameObject(double cXpos, double cYpos, int width, int height,int speed, Sprite* cSprite);
@@ -41,5 +41,5 @@ protected:
 
 };
 
-//}
+}
 #endif //GAMEV0_1_GAMEOBJECT_H

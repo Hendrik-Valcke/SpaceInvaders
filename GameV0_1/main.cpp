@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[])
 {
-    Game* SpaceInvaders = new Game{new SdlFactory()};
+    Game* SpaceInvaders = new Game{new SdlFactory()};//use factory sdlFactory
     SpaceInvaders->startGame();
     printf("\nsucces!");
     return 0;

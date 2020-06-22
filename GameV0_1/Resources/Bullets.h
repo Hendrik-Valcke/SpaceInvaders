@@ -8,18 +8,18 @@
 
 #include <vector>
 #include "GameObject.h"
-
-class Bullets {
+using namespace GameObjectSpace;
+class Bullets {//vector of bullets with extra functions
 public:
-    Bullets(bool isHostile,Sprite* sprite);
+    Bullets(bool isHostile,Sprite* sprite); //includes sprite with texture
     void addBullet(int xPos, int yPos);
-    bool checkCollision( GameObject* target);
-    void moveBullets();
+    bool checkCollision( GameObject* target); //check all the bullets from the vector and check if they collide with target
+    void moveBullets();//move function from gameObject on all bullets from vector
     std::vector<GameObject*>getBulletVector();
 
 private:
     std::vector<GameObject*> bullets;
-    bool isHostile;
+    bool isHostile;//are the bullets from an enemy or not?
     Sprite* bulletSprite;
 };
 
