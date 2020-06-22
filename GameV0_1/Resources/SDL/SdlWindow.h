@@ -31,7 +31,6 @@ private:
     std::string title;
     SDL_Window* gWindow = nullptr; //The window we'll be rendering to
     SDL_Renderer* gRenderer=nullptr;//the window renderer
-    
 };
 }
 #endif //GAMEV0_SDLWINDOW_H
