@@ -42,7 +42,7 @@ void Game::startGame()
     setupLevel(1);
     //make Text
     scoreText = factory->createText("Score: 0",SCORE_X,SCORE_Y,20,"Fonts/8BitMadness.ttf");
-    //uint32_t catchupTime=0;
+    uint32_t catchupTime=0;
 
     //setup is done, start gameloop
     while(isRunning)
@@ -171,7 +171,10 @@ void Game::startGame()
                 if (playerBullets->checkCollision(bonus))
                 {
                     bonus->setHealth(0);
-                    player->setHealth(player->getHealth()+1);
+                    if (player->getHealth()+1< MAX_HEALTH)
+                    {
+                        player->setHealth(player->getHealth()+1);
+                    }
                 }
             }
             if (enemyBullets->checkCollision(player))
@@ -224,9 +227,9 @@ void Game::startGame()
             if (timePassed < FRAMES_PER_SEC/1000)
             {
                 screen->delayFrame(FRAMES_PER_SEC/1000-timePassed/*-catchupTime*/);
-                //catchupTime = 0;
+                catchupTime = 0;
             }
-            /*else //timePassed > frameDuration
+            else //timePassed > frameDuration
             {
                 catchupTime = (timePassed-catchupTime-FRAMES_PER_SEC/1000);
                 //if the previous frames took way too long, catchupTime could become negative
@@ -234,7 +237,7 @@ void Game::startGame()
                 {
                     catchupTime = 0;
                 }
-            }*/
+            }
             screen->updateWindow();
         }
 
@@ -263,7 +266,7 @@ void Game::setupLevel(int lvl)
 
     enemies= new EnemyHorde(alien3Sprite,alien2Sprite, alien1Sprite);
     player = new GameObject(SCREEN_W/2,SCREEN_H -2*PLAYER_H ,PLAYER_W,PLAYER_H,PLAYER_SPEED,playerSprite);
-    player->setHealth(3);
+    player->setHealth(MAX_HEALTH);
     bonus = new GameObject(BONUS_START_X, BONUS_START_Y, BONUS_W ,BONUS_H,BONUS_SPEED,bonusSprite);
     bonus->setHealth(0);
     enemyBullets = new Bullets(true, enemyBulletSprite);
