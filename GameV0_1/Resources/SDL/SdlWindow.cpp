@@ -11,10 +11,10 @@
 
 SdlWindow::SdlWindow()
 {
-    width=SCREEN_W;
-    height=SCREEN_H;
+    //width=SCREEN_W;
+    //height=SCREEN_H;
     title = "Space Invaders";
-    path = "Sprites/background.png";
+    //path = "Sprites/background.png";
 }
 uint32_t SdlWindow::sendTicks()
 {
@@ -47,7 +47,7 @@ bool SdlWindow::makeWindow()
         }
 
         //Create window
-        gWindow = SDL_CreateWindow( title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, false );
+        gWindow = SDL_CreateWindow( title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_W, SCREEN_H, false );
         if( gWindow == NULL )
         {
             printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
@@ -86,7 +86,7 @@ bool SdlWindow::makeWindow()
     return success;
 }
 
-bool SdlWindow::loadMedia()
+/*bool SdlWindow::loadMedia()
 {
     printf("\nloading media...");
 
@@ -102,10 +102,10 @@ bool SdlWindow::loadMedia()
     }
 
     return success;
-}
+}*/
 //wordt niet meer gebruikt
 
-SDL_Texture* SdlWindow::loadTexture( std::string path )
+/*SDL_Texture* SdlWindow::loadTexture( std::string path )
 {
     printf("\nloading texture...");
 
@@ -131,7 +131,7 @@ SDL_Texture* SdlWindow::loadTexture( std::string path )
     SDL_FreeSurface( loadedSurface );
     }
 return newTexture;
-}
+}*/
 
 bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)
 {
@@ -190,13 +190,13 @@ bool SdlWindow:: renderGameObject(GameObject* object)
 
     return true; //nog condities adden
 }
-bool SdlWindow::applyMedia()
+/*bool SdlWindow::applyMedia()
 {
     //printf("\napplying media...");
 
     SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
     return true;
-}
+}*/
 bool SdlWindow:: updateWindow()
 {
     //printf("\nupdating window...");
@@ -217,13 +217,12 @@ bool SdlWindow::closeWindow()
     gRenderer = NULL;
 
     //Quit SDL subsystems
-
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();
     return true; // nog condities adden
 }
-int SdlWindow::getHeight() {
+/*int SdlWindow::getHeight() {
     return height;
 }
 void SdlWindow::setHeight(int sHeight) {
@@ -246,7 +245,7 @@ std::string SdlWindow::getPath() {
 }
 void SdlWindow::setPath(std::string sPath) {
     path=sPath;
-}
+}*/
 
 
 

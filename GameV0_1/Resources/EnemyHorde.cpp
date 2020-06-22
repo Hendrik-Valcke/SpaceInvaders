@@ -34,7 +34,8 @@ std::vector<Alien*>* EnemyHorde::getRow(int row)
         case 3:
             return &row3;
             break;
-
+        default:
+            return &row3;
     }
 }
 
@@ -136,7 +137,6 @@ void EnemyHorde::moveHorde()
             }
         }
     }
-
 
 }
 

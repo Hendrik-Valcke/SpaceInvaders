@@ -21,11 +21,11 @@ public:
     bool applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr) override ;
     bool applyTextTexture(Text* text) override ;
     bool renderGameObject(GameObject* object) override ;
-    bool loadMedia() override ;
-    SDL_Texture* loadTexture( std::string path )  ;
+    //bool loadMedia() override ;
+    //SDL_Texture* loadTexture( std::string path )  ;
     bool closeWindow() override;
     bool updateWindow() override;
-    bool applyMedia() override;
+    //bool applyMedia() override;
 
 
     /*
@@ -37,25 +37,25 @@ public:
     bool updateWindow() override;
      */
     //getters en setters
-    int getHeight()override;
-    void setHeight(int sHeight) override;
-    int getWidth() override;
-    void setWidth(int sWidth) override;
-    std::string getTitle() override;
-    void setTitle(std::string sTitle) override;
-    std::string getPath() override;
-    void setPath(std::string sPath) override;
+    //int getHeight()override;
+    //void setHeight(int sHeight) override;
+    //int getWidth() override;
+    //void setWidth(int sWidth) override;
+    //std::string getTitle() override;
+    //void setTitle(std::string sTitle) override;
+    //std::string getPath() override;
+    //void setPath(std::string sPath) override;
 
     SDL_Renderer* getRenderer(){return gRenderer;}
 
 
 private:
-    int width;
-    int height;
+    //int width;
+    //int height;
     std::string title;
-    std::string path;
+    //std::string path;
 
-    SDL_Texture* loadtexture= nullptr;
+    //SDL_Texture* loadtexture= nullptr;
     SDL_Window* gWindow = nullptr; //The window we'll be rendering to
     SDL_Renderer* gRenderer=nullptr;//the window renderer
     SDL_Texture* gTexture=nullptr;

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 
+
 class Text {
 public:
     Text( std::string text, int x, int y, int fontsize, std::string path);
@@ -47,6 +48,5 @@ protected:
     int width;
     int height;
 };
-
 
 #endif //GAMEV0_1_TEXT_H

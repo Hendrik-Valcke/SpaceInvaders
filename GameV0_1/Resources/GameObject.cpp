@@ -1,5 +1,7 @@
 #include "GameObject.h"
 
+
+
 GameObject::GameObject(double cXpos, double cYpos, int cWidth,int cHeight,int cSpeed, Sprite* cSprite )
 {
     xpos= cXpos;
@@ -58,38 +60,18 @@ void GameObject::setObjectSprite(Sprite *objectSprite) {
     GameObject::objectSprite = objectSprite;
 }
 
-/*void GameObject::moveObject(bool left, bool up)
-{
-    if (left)
-    {
-        xpos = xpos - speed;
-    }
-    else
-    {
-        xpos = xpos + speed;
-    }
-
-    if (up)
-    {
-        ypos = ypos - speed;
-    }
-    else
-    {
-        ypos = ypos + speed;
-    }
-}*/
-
 int GameObject::getHealth() const {
     return health;
 }
 void GameObject::setHealth(int health) {
     GameObject::health = health;
 }
-void GameObject::move(double xDistance, double yDistance)
-{
-    xpos= xpos+xDistance*speed;
-    ypos= ypos+yDistance*speed;
+void GameObject::move(double xDistance, double yDistance) {
+    xpos = xpos + xDistance * speed;
+    ypos = ypos + yDistance * speed;
 }
+
+
 
 
 

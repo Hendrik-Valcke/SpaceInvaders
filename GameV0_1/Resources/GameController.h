@@ -7,7 +7,6 @@
 
 
 #include "Window.h"
-
 class GameController {
 public:
     GameController() = default;

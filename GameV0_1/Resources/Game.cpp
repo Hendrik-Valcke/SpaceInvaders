@@ -70,13 +70,13 @@ void Game::startGame()
             iHandler->handleInput();
             input = iHandler->getInput();
             //check for border
-            if((player->getXpos() + (-input.getLeft()+input.getRight())*player->getSpeed()>0) && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() < screen->getWidth()))
+            if((player->getXpos() + (-input.getLeft()+input.getRight())*player->getSpeed()>0) && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() < SCREEN_W))
             {
                 player->setXpos(player->getXpos() +(-input.getLeft()+input.getRight()) * player->getSpeed());
             }
             else
             {
-                player->setXpos(player->getXpos()+(-input.getLeft()+input.getRight())*__min(player->getXpos()-1,screen->getWidth()-(player->getXpos()+player->getWidth())));
+                player->setXpos(player->getXpos()+(-input.getLeft()+input.getRight())*__min(player->getXpos()-1,SCREEN_W-(player->getXpos()+player->getWidth())));
             }
             if (input.isQuit())
             {
