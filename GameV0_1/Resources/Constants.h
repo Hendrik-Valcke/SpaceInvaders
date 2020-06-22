@@ -21,7 +21,7 @@ const int MAX_EN_COOLDOWN=300;
 const int MAX_HEALTH = 5;
 const int PLAYER_H=64;
 const int PLAYER_W=64;
-const int PLAYER_SPEED = 20;
+const int PLAYER_SPEED = 1;
 const int MAX_PL_COOLDOWN=3000;
 //bullets
 const int BULLET_W= 32;

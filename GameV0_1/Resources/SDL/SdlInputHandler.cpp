@@ -18,25 +18,23 @@ void SdlInputHandler::handleInput()
         {
             input.setQuit(true);
         }
-            //User presses a key
-        const Uint8* currentKeyStates = SDL_GetKeyboardState( nullptr );
-        if( currentKeyStates[ SDL_SCANCODE_LEFT ] )
-        {
-            input.setLeft(1);
-        }
-        if( currentKeyStates[ SDL_SCANCODE_RIGHT ] )
-        {
-            input.setRight(1);
-        }
-        if( currentKeyStates[ SDL_SCANCODE_ESCAPE ] )
-        {
-            input.setQuit(true);
-        }
-        if( currentKeyStates[ SDL_SCANCODE_SPACE ] )
-        {
-            input.setFire(true);
-        }
-
-
+    }
+    //User presses a key
+    const Uint8* currentKeyStates = SDL_GetKeyboardState( nullptr );
+    if( currentKeyStates[ SDL_SCANCODE_LEFT ] )
+    {
+        input.setLeft(1);
+    }
+    if( currentKeyStates[ SDL_SCANCODE_RIGHT ] )
+    {
+        input.setRight(1);
+    }
+    if( currentKeyStates[ SDL_SCANCODE_ESCAPE ] )
+    {
+        input.setQuit(true);
+    }
+    if( currentKeyStates[ SDL_SCANCODE_SPACE ] )
+    {
+        input.setFire(true);
     }
 }

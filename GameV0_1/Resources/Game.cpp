@@ -69,25 +69,18 @@ void Game::startGame()
             input.clearInput();
             iHandler->handleInput();
             input = iHandler->getInput();
-            //check for border
-            if (input.getRight()==1 and input.getLeft()==0 and player->getXpos()+player->getWidth()+player->getSpeed()<SCREEN_W)//going right
+            if (frameCounter%10==0)//move player every 10 frames (when required)
             {
-                player->move(1,0);
-            } else if (input.getRight()==0 and input.getLeft()==1 and player->getXpos()-player->getSpeed()>0)
-            {
-                player->move(-1,0);
+                //check for border
+                if (input.getRight()==1 and input.getLeft()==0 and player->getXpos()+player->getWidth()+player->getSpeed()<SCREEN_W)//going right
+                {
+                    player->move(1,0);
+                } else if (input.getRight()==0 and input.getLeft()==1 and player->getXpos()-player->getSpeed()>0)
+                {
+                    player->move(- 1,0);
+                }
             }
 
-            /*if((player->getXpos() + (-input.getLeft()+input.getRight())*player->getSpeed()>0) //check for borders (left)
-                && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() < SCREEN_W))//(right)
-            {
-
-                player->setXpos(player->getXpos() +(-input.getLeft()+input.getRight()) * player->getSpeed());
-            }
-            else
-            {
-                player->setXpos(player->getXpos()+(-input.getLeft()+input.getRight())*__min(player->getXpos()-1,SCREEN_W-(player->getXpos()+player->getWidth())));
-            }*/
             if (input.isQuit())
             {
                 isRunning = false;
