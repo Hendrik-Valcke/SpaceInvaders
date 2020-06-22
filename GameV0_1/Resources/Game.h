@@ -23,6 +23,7 @@ private:
     int score;
     int level;
     int frameCounter;
+    int rapidFire;
     //sprites
     Sprite* background;
     Sprite* playerSprite;

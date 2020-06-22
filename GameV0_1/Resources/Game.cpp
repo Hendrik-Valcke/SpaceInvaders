@@ -63,8 +63,19 @@ void Game::startGame()
             frameCounter++;
             if (frameCounter> 600)
             {frameCounter=0;}
-            playerCooldDown--;
-            enemyCoolDown--;
+            if (playerCooldDown >0)
+            {
+                playerCooldDown--;
+            }
+            if (enemyCoolDown >0)
+            {
+                enemyCoolDown--;
+            }
+            if (rapidFire >0)
+            {
+                rapidFire--;
+            }
+
             //input + playermovement+shooting
             input.clearInput();
             iHandler->handleInput();
@@ -89,7 +100,13 @@ void Game::startGame()
             {
                 //make player bullet...
                 playerBullets->addBullet(player->getXpos(),player->getYpos());
-                playerCooldDown=MAX_PL_COOLDOWN;
+                if (rapidFire>0)
+                {
+                    playerCooldDown=MAX_PL_COOLDOWN/3;
+                } else
+                {
+                    playerCooldDown=MAX_PL_COOLDOWN;
+                }
             }
             //logica
 
@@ -164,6 +181,7 @@ void Game::startGame()
                 if (playerBullets->checkCollision(bonus))
                 {
                     bonus->setHealth(0);
+                    rapidFire= rapidFire+15000;
                     if (player->getHealth()+1< MAX_HEALTH)
                     {
                         player->setHealth(player->getHealth()+1);
@@ -245,8 +263,9 @@ void Game::setupLevel(int lvl)
 {
     level=lvl;
     frameCounter=0;
-    playerCooldDown=0;
-    enemyCoolDown=0;
+    playerCooldDown=MAX_PL_COOLDOWN;
+    enemyCoolDown=MAX_EN_COOLDOWN;
+    rapidFire=0;
     background =factory->createSprite("Sprites/spaceTheme/background.png");
     playerSprite =factory->createSprite("Sprites/spaceTheme/playerShip.png");
     alien1Sprite =factory->createSprite("Sprites/spaceTheme/alien.png");
