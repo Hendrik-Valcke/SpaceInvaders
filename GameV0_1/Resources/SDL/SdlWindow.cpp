@@ -31,7 +31,6 @@ bool SdlWindow::makeWindow()
     printf("\nmaking window...");
     //Initialization flag
     bool success = true;
-
     //Initialize SDL
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
     {
@@ -135,35 +134,28 @@ return newTexture;
 
 bool SdlWindow:: applyTexture(int sprDestX, int sprDestY, int sprWidth, int sprHeight, Sprite* spr)
 {
-    //printf("\napplying texture...");
     SDL_Rect destRect;
     destRect.x = sprDestX;
     destRect.y = sprDestY;
     destRect.w = sprWidth;
     destRect.h = sprHeight;
     SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
-    return true; //nog condities adden
+    return true;
 }
 
 bool SdlWindow:: applyTextTexture( Text* text)
 {
-    //printf("\napplying texture...");
     SDL_Rect destRect;
     destRect.x = text->getXPos();
     destRect.y = text->getYPos();
     destRect.w = text->getWidth();
     destRect.h = text->getHeight();
     SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(text->getTexture()), NULL, &destRect );
-    return true; //nog condities adden
+    return true;
 }
 
 bool SdlWindow:: renderGameObject(GameObject* object)
 {
-    //fps->60 ->frameDuration = 60/1000 ms
-    //uint32_t startTicks = SDL_GetTicks();//millisec
-    //uint32_t frameDuration = FRAMES_PER_SEC/1000;
-    //int catchupTime;
-
     SDL_Rect destRect;
     destRect.x = object->getXpos();
     destRect.y = object->getYpos();
@@ -171,24 +163,7 @@ bool SdlWindow:: renderGameObject(GameObject* object)
     destRect.h = object->getHeight();
     Sprite* spr = object->getObjectSprite();
     SDL_RenderCopy( gRenderer, reinterpret_cast<SDL_Texture*>(spr->getTexture()), NULL, &destRect );
-
-    /*uint32_t timePassed = SDL_GetTicks()-startTicks;
-    if (timePassed+catchupTime <= frameDuration)
-    {
-        SDL_Delay(frameDuration-timePassed-catchupTime);
-        catchupTime = 0;
-    }
-    else //timePassed > frameDuration
-        {
-            catchupTime = (timePassed-catchupTime-frameDuration);
-            if (catchupTime<0)
-            {
-                catchupTime = 0;
-            }
-        }*/
-
-
-    return true; //nog condities adden
+    return true;
 }
 /*bool SdlWindow::applyMedia()
 {
@@ -199,8 +174,6 @@ bool SdlWindow:: renderGameObject(GameObject* object)
 }*/
 bool SdlWindow:: updateWindow()
 {
-    //printf("\nupdating window...");
-
     SDL_RenderPresent( gRenderer );
     SDL_RenderClear(gRenderer);
     return true;
@@ -208,8 +181,6 @@ bool SdlWindow:: updateWindow()
 }
 bool SdlWindow::closeWindow()
 {
-    //printf("\nclosing window...");
-
     //Destroy window
     SDL_DestroyRenderer( gRenderer );
     SDL_DestroyWindow( gWindow );

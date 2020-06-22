@@ -70,14 +70,24 @@ void Game::startGame()
             iHandler->handleInput();
             input = iHandler->getInput();
             //check for border
-            if((player->getXpos() + (-input.getLeft()+input.getRight())*player->getSpeed()>0) && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() < SCREEN_W))
+            if (input.getRight()==1 and input.getLeft()==0 and player->getXpos()+player->getWidth()+player->getSpeed()<SCREEN_W)//going right
             {
+                player->move(1,0);
+            } else if (input.getRight()==0 and input.getLeft()==1 and player->getXpos()-player->getSpeed()>0)
+            {
+                player->move(-1,0);
+            }
+
+            /*if((player->getXpos() + (-input.getLeft()+input.getRight())*player->getSpeed()>0) //check for borders (left)
+                && (player->getXpos()+player->getWidth() + (-input.getLeft()+input.getRight())*player->getSpeed() < SCREEN_W))//(right)
+            {
+
                 player->setXpos(player->getXpos() +(-input.getLeft()+input.getRight()) * player->getSpeed());
             }
             else
             {
                 player->setXpos(player->getXpos()+(-input.getLeft()+input.getRight())*__min(player->getXpos()-1,SCREEN_W-(player->getXpos()+player->getWidth())));
-            }
+            }*/
             if (input.isQuit())
             {
                 isRunning = false;
@@ -113,7 +123,7 @@ void Game::startGame()
                 //random chance enemy shoots back
                 if (!(enemies->getRow(1)->empty() and enemies->getRow(2)->empty() and enemies->getRow(3)->empty()))
                 {
-                    if (rand()%100==1)
+                    if (rand()%(100/level)==1)
                     {
                         int randomRow = enemies->returnRandomRow();
                         int randomEnemy = enemies->returnRandomEnemyOnRow(randomRow);

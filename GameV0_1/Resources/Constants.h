@@ -16,7 +16,7 @@ const int ENEMY_H = 64;
 const int ENEMY_X_START=64;
 const int ENEMY_Y_START=64;
 const int ENEMY_SPEED = 1;
-const int MAX_EN_COOLDOWN=3000;
+const int MAX_EN_COOLDOWN=300;
 //player
 const int MAX_HEALTH = 3;
 const int PLAYER_H=64;

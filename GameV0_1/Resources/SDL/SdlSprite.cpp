@@ -13,8 +13,6 @@ SdlSprite::SdlSprite(std::string cPath )
 }
 void SdlSprite::setTexture(std::string path)
 {
-    printf("\nloading texture...");
-
     //Load image at specified path
     SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
     if( loadedSurface == NULL )
