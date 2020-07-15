@@ -234,7 +234,7 @@ void Game::startGame()
             //last step of loop:
             //calculate time passed during this iteration of gameLoop
             uint32_t timePassed = screen->sendTicks()-framestart;
-            //if timePassed < frametime: wait, if previous frames were too slow-> compensate to improve consistenct across multiple frames
+            //if timePassed < frametime: wait, if previous frames were too slow-> compensate to improve consistency across multiple frames
             if (timePassed < FRAMES_PER_SEC/1000)
             {
                 screen->delayFrame(FRAMES_PER_SEC/1000-timePassed/*-catchupTime*/);

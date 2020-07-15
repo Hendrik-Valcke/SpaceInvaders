@@ -23,7 +23,6 @@ public://many functians are bool instead of void, this can come in handy when ch
     bool renderGameObject(GameObject* object) override ;
     bool closeWindow() override;
     bool updateWindow() override;
-
     SDL_Renderer* getRenderer(){return gRenderer;}
 
 
